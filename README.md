@@ -5,9 +5,9 @@ Justyna Makowska
 Marcin Plusa
 Sebastian Staniak
 Filip Adamczyk
-Nazwa aplikacji: Bjuy.pl
+Nazwa aplikacji: Bjuty.pl
 
-Opis aplikacji: Bjuy.pl
+Opis aplikacji:
 
 Aplikacja w którym jest kalendarz. Użytkownik ma wgląd do Swojego kalendarza a tam jest informacja  w którym dniu i o której godzinie są wolne terminy do specjalistów na dana usługę.
 Aplikacja , która pomaga użytkownikowi zarządzać kalendarzem.  Pokazuje użytkownikowi w odpowiednim dla niego czasie wole terminy do specjalistów tkj: fryzjerzy, manikiurzystki, masażyści, fizjoterapeuci itp.
