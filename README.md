@@ -26,7 +26,7 @@ konkretnych specjalistów lub konkretną usługę  jaką jest zainteresowany.
 5. Zarejestrowani w aplikacji specjaliści, salony urody, firmy usługowe zaznaczają wolne terminy.
 6. Przez aplikacje można dokonać płatności za daną usługę.
 
-#DOD : #
+#DOD :#
 1. Utalenie szaty graficznej na komputerach i uządzeniach mobilnych
 3. Kombatybilność z przeglądarkami : Chrome i Firefox (aktualne wersje oraz 2 ostatnie)
 4. Testowanie
