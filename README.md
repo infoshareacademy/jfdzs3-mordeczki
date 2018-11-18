@@ -1,10 +1,11 @@
 # jfdzs3-morrdeczki
-## Nazwa zespołu : Mordeczki
+## Nazwa zespołu : 
+Mordeczki
 ## Lista członków grupy:
-Justyna Makowska 
-Marcin Plusa
-Sebastian Staniak
-Filip Adamczyk
+* Justyna Makowska 
+* Marcin Osak
+* Sebastian Staniak
+* Filip Adamczyk
 ## Nazwa aplikacji:
 Bjuty.pl
 
