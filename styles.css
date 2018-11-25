@@ -133,3 +133,13 @@ input[type="submit"] {
     margin-left: 510px;
     margin-bottom: 50px;
 }
+
+.card {
+    display: flex;
+    flex-direction: row;
+    border: none;
+}
+
+.card-body {
+    text-align: center;
+}
