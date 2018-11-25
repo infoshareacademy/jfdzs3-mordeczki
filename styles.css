@@ -4,7 +4,6 @@ html {
 }
 body {
     width:100%;
-    display: table;
     margin: auto;
 }
 .logo {
@@ -88,9 +87,11 @@ li.dropdown {
     margin-bottom: 10px;
 }
 .element {
-    display: inline-block;
+    display:inline-block;
     width: 337px;;
     height: 300px;
+    text-align:center;
+    
 }
 
 .element img {
