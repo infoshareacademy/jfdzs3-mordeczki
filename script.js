@@ -1,3 +1,3 @@
-lalalalala
-
-bleblebleble
+// $('.carousel') .carousel({
+//     interval: 2000
+// })
