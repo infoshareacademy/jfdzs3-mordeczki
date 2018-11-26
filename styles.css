@@ -100,14 +100,24 @@ input[type="submit"] {
 }
 
 .card {
-    border: none;
+   border: none;
 }
 
 .card-img-top {
-    max-width: 200px;
+    max-width: 150px;
     margin: 0 auto;
 }
 
 .card-body {
+    text-align: justify;
+}
+
+.about-us a, .contact {
+    font-size: 40px;
+}
+
+.card-title {
+    font-weight: bold;
+    font-size: 30px;
     text-align: center;
 }
