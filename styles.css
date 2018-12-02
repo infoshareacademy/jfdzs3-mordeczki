@@ -173,3 +173,14 @@ input[type="submit"] {
 
   
   /* section end justyna */
+
+  .footer {
+      background: rgb(0, 0, 0);
+      color: white;
+      font-size: 20px;
+      padding-left: 20px;
+  }
+
+  .icons {
+      display: inline-block;
+  }
