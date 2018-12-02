@@ -179,8 +179,18 @@ input[type="submit"] {
       color: white;
       font-size: 20px;
       padding-left: 20px;
+      width: 100%;
+      height: 50px;
   }
 
-  .icons {
-      display: inline-block;
+  .col-sm6 img {
+      width: 50px;
+      height: 50px;
+      margin-left: 20px;
+      margin-right: 20px;
+  }
+
+  .row {
+      justify-content: center;
+      align-content: center;
   }
