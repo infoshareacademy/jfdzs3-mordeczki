@@ -4,3 +4,5 @@ $(function(){
 
 //cookies//
 CookieAlert.init();
+
+//animation//
