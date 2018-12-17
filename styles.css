@@ -226,8 +226,10 @@ input[type="submit"] {
     height: 75px;
     background: rgb(155, 0, 77);
     position: fixed;
+    bottom: 8px;
+    right: 8px;
     border-radius: 50%;
-    margin-left: 92%;
+    margin-left: 5px;
     box-shadow: 2px 1px rgb(134, 134, 134);
     text-align: center;
     z-index: 2;
