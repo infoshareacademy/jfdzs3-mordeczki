@@ -230,6 +230,7 @@ input[type="submit"] {
     margin-left: 92%;
     box-shadow: 2px 1px rgb(134, 134, 134);
     text-align: center;
+    z-index: 2;
   }
 
   .circle-text {
