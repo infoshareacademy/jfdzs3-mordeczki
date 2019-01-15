@@ -272,14 +272,14 @@ input[type="submit"] {
   @media only screen and (min-width: 490px) and (max-width:1000px){
     .col-sm-4 {
       position: relative; 
-      max-width: 800px; /* Maximum width */
-      margin: 0 auto; /* Center it */  
+      max-width: 800px;
+      margin: 0 auto;
       padding: 10px;
     } 
     .col-sm-4 .text_advanteges-functions {
-      position: absolute; /* Position the background text */
-      background: rgb(0, 0, 0); /* Fallback color */
-      background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+      position: absolute;
+      background: rgb(0, 0, 0);
+      background: rgba(0, 0, 0, 0.5); 
       color: #f1f1f1;
       width: 90%;
       height: 30%;
@@ -296,8 +296,8 @@ input[type="submit"] {
 @media only screen and (min-width: 335px) and (max-width: 574px){
     .col-sm-4 {
       position: relative; 
-      max-width: 800px; /* Maximum width */
-      margin: 0 auto; /* Center it */  
+      max-width: 800px;
+      margin: 0 auto; 
       padding: 10px;
     } 
     .col-sm-4 .text_advanteges-functions {
@@ -320,8 +320,8 @@ input[type="submit"] {
 @media only screen and (max-width: 336px){
     .col-sm-4 {
       position: relative; 
-      max-width: 800px; /* Maximum width */
-      margin: 0 auto; /* Center it */  
+      max-width: 800px;
+      margin: 0 auto; 
       padding: 10px;
     } 
     .col-sm-4 .text_advanteges-functions {
