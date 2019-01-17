@@ -5,28 +5,69 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Game</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
-    <script src="main.js"></script>
+    <script src="main.js"></script> 
+    -->
+<style>
+    #hero {
+        background: red;
+        height: 20px;
+        width: 20px;
+        position: absolute;
+    }
+    #background{
+        background: black;
+        width: 500px;
+        height: 500px;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        }
+    #laser{
+        background: green;
+        width: 2px;
+        height: 50px;
+        position: absolute;
+    }
+    .enemy{
+        background: blue;
+        width: 35px;
+        height: 35px;
+        position: absolute;
+    }
+</style>
 </head>
 <body>
+    <div id="background"></div>
+    <div id="hero">
+        <div id="laser"></div>
+        <!--    <img id= "hero" src="img/hero_lipstick.png">    -->
     <div>
-        <img id= "hero" src="img/hero_lipstick.png">
-    </div>
+
     <script>
-            var LEFT_KEY = 37;
-            var UP_KEY = 38;
-            var RIGHT_KEY = 39;
-            var DOWN_KEY = 40;
-            var HERO_MOVEMENT = 5;
+            var LEFT_KEY = 37; // wyszło w Console
+            var UP_KEY = 38; // wyszło w Console
+            var RIGHT_KEY = 39; // wyszło w Console
+            var DOWN_KEY = 40; // wyszło w Console
+            var SPACE_KEY = 32; // wyszło w Console
+            var HERO_MOVEMENT = 3; // prędkość
 
             var lastLoopRun = 0;
 
-            var hero = new Object();
-            hero.element = 'hero';
-            hero.x = 250;
-            hero.y = 460;
-
             var controller = new Object();
+            var enemies = new Array();
+
+            // sprite - obrazu to zbiór obrazów umieszczonych w jednym obrazie.
+            function createSprite(element, x, y, w, h) {
+                var result = new Object();
+                result.element = element;
+                result.x = x;
+                result.y = y;
+                result.w = w;
+                result.h = h;
+                return result;
+            }
 
             function toggleKey(keyCode, isPressed){
                 if (keyCode == LEFT_KEY) {
@@ -41,8 +82,31 @@
                 if (keyCode == DOWN_KEY) {
                     controller.down = isPressed;
                 }
-
+                if (keyCode == SPACE_KEY) {
+                    controller.space = isPressed;
+                }
             }
+                /*
+                console.log(keyCode); // do kontroli ady wpisać 32 w SPACE_KEY
+                */
+            // granica - obijanie się - tworzenei podstawowej funkcji
+            // nie działa
+            /*
+            function ensureBounds(sprite) { 
+                if (sprite.x < 20){
+                    sprite.x = 20;
+                }
+                if (sprite.y < 20) {
+                    sprite.y = 20;
+                }
+                if (sprite.x + sprite.w > 480){
+                    sprite.x = 480 - sprite.w;
+                }
+                if (sprite.y + sprite.h > 480) {
+                    sprite.y = 480 - sprite.h;
+                }
+            }
+            */
             
             function setPosition(sprite){
                 var e = document.getElementById(sprite.element);
@@ -62,15 +126,62 @@
                 if (controller.right) {
                     hero.x += HERO_MOVEMENT;
                 }
+                if (controller.space && laser.y <= 120) {
+                    laser.x = hero.x + 9;
+                    laser.y = hero.y - laser.h;
+                }
             }
+
+            //granica sceny przypisana dla hero
+            // nie działa  
+            /*
+            ensureBounds(hero);
+            */ 
+
             function showSprites() {
                 setPosition(hero);
+                setPosition(laser);
+                for (var i = 0; i < enemies.length; i++){
+                    setPosition(enemies)[i];
+                }
 
             }
+
+            function updatePositions() {
+                for ( var i = 0; i < enemies.length; i++){
+                    enemies[i].y +=4;
+                    enemies[i].x += getRandom(7) - 3;
+                }
+                laser.y -= 12;
+            }
+
+            function addEnemy() { 
+                if (getRandom(50) == 0) {
+                    var elementName = 'enemy' + getRandom(10000000);
+                    var enemy = creatSprite(elementName, getRandom(450), -40, 35,  35);
+
+                    var element = document.createElement('div');
+                    element.id = enemy.element;
+                    element.className = 'enemy';
+                    document.children[0].appendChild(element);
+
+                    enemies[enemies.length] = enemy;
+                }
+            }
+
+            function getRandom(maxSize) {
+                return parseInt(Math.random() * maxSize);
+            }
+
             function loop(){
-                if (new Date().getTime()- lastLoopRun > 40){
+                if (new Date().getTime()- lastLoopRun > 40) {
+                    updatePositions();
                     handleCondrols();
+
+                    addEnemy();
+
                     showSprites();
+
                     lastLoopRun = new Date().getTime();
                 }
                 setTimeout('loop();', 2);
@@ -84,6 +195,18 @@
             document.onkeyup = function(evt) {
                 toggleKey(evt.keyCode, false);
             };
+
+            var hero = createSprite ('hero', 250, 460, 20, 20);
+            var laser = createSprite ('laser', 0, -120, 2, 50);
+            /* ↑ to wszystko jest juz zamieszczone w createSprite ↑
+            var hero = new Object();
+            hero.element = 'hero';
+            hero.x = 250;
+            hero.y = 460;
+            hero.w = 20; //przypisanie długości bohatera - dane z  css
+            hero.h = 20; //przypisanie wysokosci bohatera - dane z  css
+            */
+
             loop();
     </script>
     
