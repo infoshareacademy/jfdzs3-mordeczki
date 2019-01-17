@@ -216,16 +216,16 @@ input[type="submit"] {
 /* ____________section start justyna___________ */
 .app_functions{
     background: #f8b9d9;
+    padding: 10px;
 }
 .text_section-app{
     text-align: center;
     font-size: 40px;
-    padding: 10px;
+    padding: 40px;
 }
 .text_section{
     text-align: center;
     font-size: 40px;
-    padding: 40px;
   }
 .picture_icon {
  height: 10%; 
@@ -234,7 +234,7 @@ input[type="submit"] {
     text-align: justify;
     font-size: 15px;
     text-align: center;
-    padding: 5px;
+    padding: 30px;
   }
   .advanteges__app_photo{
     width: 100%;
