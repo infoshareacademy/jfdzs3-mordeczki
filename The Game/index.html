@@ -144,7 +144,6 @@
                 for (var i = 0; i < enemies.length; i++){
                     setPosition(enemies)[i];
                 }
-
             }
 
             function updatePositions() {
@@ -158,7 +157,7 @@
             function addEnemy() { 
                 if (getRandom(50) == 0) {
                     var elementName = 'enemy' + getRandom(10000000);
-                    var enemy = creatSprite(elementName, getRandom(450), -40, 35,  35);
+                    var enemy = createSprite(elementName, getRandom(450), -40, 35,  35);
 
                     var element = document.createElement('div');
                     element.id = enemy.element;
@@ -196,8 +195,8 @@
                 toggleKey(evt.keyCode, false);
             };
 
-            var hero = createSprite ('hero', 250, 460, 20, 20);
-            var laser = createSprite ('laser', 0, -120, 2, 50);
+            var hero = createSprite('hero', 250, 460, 20, 20);
+            var laser = createSprite('laser', 0, -120, 2, 50);
             /* ↑ to wszystko jest juz zamieszczone w createSprite ↑
             var hero = new Object();
             hero.element = 'hero';
