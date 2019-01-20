@@ -138,6 +138,10 @@ input[type="submit"] {
     background-color: white;
   }
 
+.flip-card-front img {
+    margin-top: 50px;
+}
+
 .flip-card-back {
     background-color: rgb(155, 0, 77);
     color: white;
