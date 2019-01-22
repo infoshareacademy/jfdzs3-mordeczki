@@ -9,37 +9,38 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="styles.css">
-    <link rel="shortcut icon" href="img/favicon.ico" /> 
+    <link rel="shortcut icon" href="img/favicon.ico" />
     <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz&subset=latin,latin-ext" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
 </head>
+
 <body>
-    <nav class="menu">
-        <div class="container-full">
-            <ul class="nav justify-content-center">
-                <li class="nav-item">
-                    <a class="nav-link active" href="home">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Premiera</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Funkcje</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Zespół</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Kontakt</a>
-                </li>
-            </ul>
-        </div>
+    <div class="container-fluid" id="menu-wide">
         <div class="container">
-            <div class="logobutton">
-                <img class="logo" src="Logo.png">>
+            <div class="menu">
+                <nav class="navbar navbar-expand-lg justify-content-center">
+                    <div class="logobutton">
+                        <img class="logo" src="Logo.png">
+                    </div>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                        <div class="navbar-nav">
+                            <a class="nav-item nav-link active" href="#">Strona Główna<span class="sr-only">(current)</span></a>
+                            <a class="nav-item nav-link" href="#">Opis Aplikacji</a>
+                            <a class="nav-item nav-link" href="#">Zespół</a>
+                            <a class="nav-item nav-link" href="#">Plusy Aplikacji</a>
+                        </div>
+                    </div>
+                </nav>
             </div>
         </div>
+    </div>
+    </div>
     </nav>
+    </div>
     <div class="container-full">
         <section id="Filip">
             <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
@@ -52,36 +53,49 @@
                     <div class="carousel-item">
                         <img class="d-block w-100" src="img/baner_beauty_body.jpg" alt="Second slide">
                     </div>
-                    </div>
                 </div>
             </div>
-        <div class="circle"><a href="javascript:scroll(0,0)">
+    </div>
+    <div class="circle"><a href="javascript:scroll(0,0)">
             <div class="circle-text">^</div>
-        </div></a>
+    </div></a>
 
-    <section class= "app_functions"><!-- section start justyna -->
-        <div><p class="text_section-app">OPIS APLIKACJI</p></div>
+    <section class="app_functions">
+        <!-- section start justyna -->
+        <div>
+            <p class="text_section-app">OPIS APLIKACJI</p>
+        </div>
         <div class="container">
             <div class="row">
                 <div>
                     <div class="col-sm"><img class="picture_icon" src="img/calendar_icon.png" alt="calendar_icon"></div>
-                    <div class="col-sm"><p id="text_app-functions">WBUDOWANY KALENDARZ</p></div>  
+                    <div class="col-sm">
+                        <p id="text_app-functions">WBUDOWANY KALENDARZ</p>
+                    </div>
                 </div>
                 <div>
                     <div class="col-sm"><img class="picture_icon" src="img/beauty_icon.jpg" alt="beauty_icon"></div>
-                    <div class="col-sm"><p id="text_app-functions">LISTA USŁUG BEAUTY</p></div>
+                    <div class="col-sm">
+                        <p id="text_app-functions">LISTA USŁUG BEAUTY</p>
+                    </div>
                 </div>
                 <div>
                     <div class="col-sm"><img class="picture_icon" src="img/search_icon.png" alt="search_icon"></div>
-                    <div class="col-sm"><p id="text_app-functions">WYSZUKIWARKA</p></div>
+                    <div class="col-sm">
+                        <p id="text_app-functions">WYSZUKIWARKA</p>
+                    </div>
                 </div>
                 <div>
-                    <div class="col-sm"><img class="picture_icon" src="img/people_icon.png"alt="beauty_icon"></div>
-                    <div class="col-sm"><p id="text_app-functions">LISTA USŁUGODAWCÓW</p></div>
+                    <div class="col-sm"><img class="picture_icon" src="img/people_icon.png" alt="beauty_icon"></div>
+                    <div class="col-sm">
+                        <p id="text_app-functions">LISTA USŁUGODAWCÓW</p>
+                    </div>
                 </div>
                 <div>
                     <div class="col-sm"><img class="picture_icon" src="img/alarm_clock.png" alt="calendar_icon"> </div>
-                    <div class="col-sm"><p id="text_app-functions">PRZYPOMNIENIA</p></div>
+                    <div class="col-sm">
+                        <p id="text_app-functions">PRZYPOMNIENIA</p>
+                    </div>
                 </div>
                 <div>
                     <div class="col-sm"><img class="picture_icon" src="img/credit_card_icon.png" alt="calendar_icon"> </div>
@@ -90,8 +104,8 @@
             </div> 
             <div><p id="text_app-functions">Aplikacja z wbudowany kalendarzem, zarządza Twoim wolnym czasem i pomaga w jego zaoszczędzeniu. Szuka wolnych terminów, a użytkownik ma za zadanie je zaakceptować i umówić się na daną wizytę lub je zignorować. Poprzez wgląd do Swojego kalendarza, jest możliwość podania informacji o swoich wolnych dniach i godzinach, jednocześnie zaznaczenia usługi, która nas interesuje. Aplikacja pomaga użytkownikowi zarządzać kalendarzem. Pokazuje  w odpowiednim dla niego czasie wole terminy do specjalistów takich jak: fryzjerzy, manikiurzystki, masażyści, fizjoterapeuci itp. </p></div>
         </div>
-	</section><!-- section end justyna -->
-  
+    </section><!-- section end justyna -->
+
     <section class="about-us"> <a>ZESPÓŁ</a>
         <div class="container">
             <div class="team">
@@ -146,8 +160,11 @@
         </div>
     </section>
 
-    <section class="row row-b"><!-- section start justyna -->
-        <div class="w-100"><p class="text_section">PLUSY APLIKACJI</p></div>
+    <section class="row row-b">
+        <!-- section start justyna -->
+        <div class="w-100">
+            <p class="text_section">PLUSY APLIKACJI</p>
+        </div>
         <div class="container">
             <div class="row">
                 <picture class="col-sm-4">
@@ -173,32 +190,34 @@
     </section><!-- section end justyna -->
 
     <section class="signIn">
-    <div class="container">
-        <h3>ZAPISZ SIĘ NA WIELKĄ PREMIERĘ</h3>
+        <div class="container">
+            <h3>ZAPISZ SIĘ NA WIELKĄ PREMIERĘ</h3>
             <p>Chcesz być na bieżąco? Już dziś zapisz się na premierę i zagraj w naszą bezpłatną grę.</p>
 
             <form action="mailto:biuro@bjuti.pl?subject=Zapis%20na%20premiere">
                 <div class="form-group row">
-                        <div class="col-sm6">
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Wpisz swój e-mail">
-                            <small id="emailHelp" class="form-text">Bez obaw, my też nie lubimy Spamu. Twoje dane będą z nami bezpieczne.</small>
-                        </div>
+                    <div class="col-sm6">
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                            placeholder="Wpisz swój e-mail">
+                        <small id="emailHelp" class="form-text">Bez obaw, my też nie lubimy Spamu. Twoje dane będą z
+                            nami bezpieczne.</small>
+                    </div>
                 </div>
                 <button type="submit" class="btn btn-primary">Gotowe, zapisz mnie!</button>
             </form>
 
-        </form>
-    </div>
+            </form>
+        </div>
     </section>
-    
-    <section class="footer"> 
+
+    <section class="footer">
         <div class="container">
             <div class="row">
                 <div class="col-sm6"><a href="http://www.facebook.com"><img src="img/fb.png"></a></div>
                 <div class="col-sm6"><a href="http://www.slack.com"><img src="img/slack.png"></a></div>
                 <div class="col-sm6"><a href="505536853"><img src="img/phone.png"></a></div>
             </div>
-          </div>
+        </div>
     </section>
 
     </div>

@@ -4,48 +4,38 @@ html * {
 body {
     width:100%;
     margin: auto;
+
 }
-.logobutton {
-    display:flex;
-    justify-content:flex-start;
-    margin-top:-50px;
-    margin-right:1000px
+#menu-wide {
+    background-color:black;
+    position: fixed;
+	z-index: 10;
 }
 .logobutton .logo {
-    width:100px;
+    display:flex;
+    padding:10px;
+    width:200px;
 }
+.navbar-nav {
+    align-items: center;
+}
+.navbar-toggler {
+    background-image: url(img/iconfinder_menu-alt_134216.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#filip {}
 .col-sm img {
     width:100px;
     display: block;
     margin-left: auto;
     margin-right: auto;
     /* also advanteges__app section -> justyna*/
-
-}
-.menu {
-    list-style-type:none;
-    margin:0;
-    padding:0;
-    overflow:hidden;
-    background-color:black;
-    text-align: center;
-    height:45px;
-}
-.menu li a {
-    font-size:20px;
-    color:white;
-    padding:8px 30px;
-}
-.menu li {
-    float:none;
-    display:inline-block;
 }
 .menu a {
-    color:black;
-    padding: 14px 20px;
+    color:white;
     text-decoration: none;
     font-size:1.2rem;
-    display:inline-block;
 }
 .menu a:hover {
     color:rgb(155, 0, 77);
@@ -53,7 +43,6 @@ body {
 .about-us, .contact {
     text-align: center;
     margin-bottom: 10px;
-    
 }
 .element {
     display:inline-block;
