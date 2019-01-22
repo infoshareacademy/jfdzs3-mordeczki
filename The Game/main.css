@@ -1,0 +1,26 @@
+#hero {
+    background: red;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+}
+#background{
+    background: black;
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    }
+#laser{
+    background: green;
+    width: 2px;
+    height: 50px;
+    position: absolute;
+}
+.enemy{
+    background: blue;
+    width: 35px;
+    height: 35px;
+    position: absolute;
+}
