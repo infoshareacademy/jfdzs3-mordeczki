@@ -50,7 +50,7 @@ class GameEngine
         this.player = new Player('hero');
         this.enemies = new Array();  
     }
-    ListenForKeysPressed(){
+    ListenForKeysPressed = function(){
         document.onkeydown = function(evt) {
             console.log(evt);
         }
