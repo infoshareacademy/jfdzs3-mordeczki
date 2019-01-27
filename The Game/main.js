@@ -165,6 +165,26 @@ function listenForKeysPressed(){
         }
     }
 }
+
+
+/*
+function ensureBounds(sprite) {
+ if (deltaX < (window.innerWidth-55)) {deltaX += 5;}
+                   square.style.setProperty("left", deltaX);
+                   square.style.marginLeft = deltaX+'px';
+                   //console.log('Left position:', deltaX);
+           break;
+               if (deltaY < (window.innerHeight-55)) {deltaY += 5;}
+                   square.style.setProperty("top", deltaY);
+                   square.style.marginTop = deltaY+'px';
+                   //console.log('Top position:', deltaY);
+           break;
+       }
+   }
+   window.addEventListener("keydown", move);
+   });
+
+   */
     
     
     function loop(){
