@@ -152,7 +152,25 @@ let player = {
        bullet.style.left = this.positionX + 'px';
        document.getElementById("GameBoard").appendChild(bullet);   
      }
-}              
+}  
+
+function Enemy(positionX, positionY){
+    this.speed = 5;
+    this.health = 2;
+    this.positionX = positionX;
+    this.positionY = positionY;
+}
+
+Enemy.prototype.createSprite = function(){
+    let enemy = document.createElement("div");
+    enemy.id = "enemy";
+    enemy.style.top = this.positionY + 'px';
+    enemy.style.left = this.positionX + 'px';
+    document.getElementById("GameBoard").appendChild(enemy);
+}
+
+
+
 function listenForKeysPressed(){
     document.onkeydown = function(evt){
         if( evt.key == 'ArrowRight' || evt.key == 'ArrowLeft' )
@@ -163,6 +181,22 @@ function listenForKeysPressed(){
         if (evt.key == ' '){
             player.shoot();
         }
+        if (evt.key == 'f'){
+            var i;
+            var enemies = [];
+            for(i = 0; i < 5; i++ ){
+                let enemy = new Enemy(i * 50 , 10);
+                enemies.push(enemy);
+                                
+            }
+
+            for(i = 0; i < enemies.length; i++){
+                let enemyFromList = enemies.indexOf(i);
+                enemyFromList.createSprite();
+
+            }
+        }
+
     }
 }
 
