@@ -192,7 +192,7 @@ function listenForKeysPressed(){
 
             for(i = 0; i < enemies.length; i++){
                 let enemyFromList = enemies.indexOf(i);
-                enemyFromList.createSprite();
+                enemyFromList.createSprite;
 
             }
         }
