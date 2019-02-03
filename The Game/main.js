@@ -154,11 +154,35 @@ let player = {
      }
 }  
 
+let enemies = [];
+let previousDirection = "Right";
+function moveEnemies(){
+    let dir = previousDirection;
+    if( previousDirection == "Right" && enemies[enemies.length-1].positionX == 450){
+        dir = "Down";
+    }
+    else if(previousDirection == "Down" ){
+        dir = "Left"
+    }
+    else if(previousDirection == "Left" && enemies[0].positionX == 0)
+    {
+        dir = 'Down';
+    }
+
+    for(var i = 0;i < enemies.length;i++)
+    {
+        enemies[i].move(dir);
+        
+    }
+    previousDirection = dir
+}
+
 function Enemy(positionX, positionY){
     this.speed = 5;
     this.health = 2;
     this.positionX = positionX;
     this.positionY = positionY;
+    this.DOMElement;
 }
 
 Enemy.prototype.createSprite = function(){
@@ -166,10 +190,32 @@ Enemy.prototype.createSprite = function(){
     enemy.id = "enemy";
     enemy.style.top = this.positionY + 'px';
     enemy.style.left = this.positionX + 'px';
+    this.DOMElement = enemy;
     document.getElementById("GameBoard").appendChild(enemy);
 }
+Enemy.prototype.move = function(direction){
+    if( direction == 'Right'){
+        this.positionX += 1;
+        this.DOMElement.style.left = this.positionX + 'px';
+    }
+    if( direction == 'Down'){
+        this.positionY += 5;
+        this.DOMElement.style.top = this.positionY + 'px';
+    }
+    if (direction =='Left'){
+        this.positionX -= 1;
+        this.DOMElement.style.left = this.positionX + 'px';
+    }
 
+}
 
+function createEnemies(quantity){
+    for( i = 0; i< quantity; i++){
+       let enemy = new Enemy(i * 50, 10);
+       enemy.createSprite();
+       enemies.push(enemy);
+    }
+}
 
 function listenForKeysPressed(){
     document.onkeydown = function(evt){
@@ -182,19 +228,10 @@ function listenForKeysPressed(){
             player.shoot();
         }
         if (evt.key == 'f'){
-            var i;
-            var enemies = [];
-            for(i = 0; i < 5; i++ ){
-                let enemy = new Enemy(i * 50 , 10);
-                enemies.push(enemy);
-                                
-            }
-
-            for(i = 0; i < enemies.length; i++){
-                let enemyFromList = enemies.indexOf(i);
-                enemyFromList.createSprite;
-
-            }
+            createEnemies(5);
+        }
+        if(evt.key =='g'){
+            
         }
 
     }
@@ -223,6 +260,7 @@ function ensureBounds(sprite) {
     
     function loop(){
         listenForKeysPressed();
+        moveEnemies();
         // updatePositions();
         // handleCondrols();
         // addEnemy();
