@@ -1,132 +1,5 @@
-
-// var lastLoopRun = 0;
-
-// var controller = new Object();
-// var enemies = new Array();
-
-// // sprite - zbiór pikseli, które tworzą jakąś postać, obiekt w grach 2D.
-// // funkcja, która tworzy nowy obiekt i go zwraca
-// function createSprite(element, x, y, w, h) {
-    //     var result = new Object();
-    //     result.element = element;
-    //     result.x = x;
-    //     result.y = y;
-    //     result.w = w;
-    //     result.h = h;
-    //     return result; // zwraca nowy obiekt
-    // }
-    
-    // function toggleKey(keyCode, isPressed){ 
-        //     if (keyCode == LEFT_KEY) {
-            //         controller.left = isPressed;
-            //     }
-            //     if (keyCode == RIGHT_KEY) {
-                //         controller.right = isPressed;
-                //     }
-                //     if (keyCode == UP_KEY) {
-                    //         controller.up = isPressed;
-                    //     }
-                    //     if (keyCode == DOWN_KEY) {
-                        //         controller.down = isPressed;
-                        //     }
-                        //     if (keyCode == SPACE_KEY) {
-                            //         controller.space = isPressed;
-                            //     }
-                            // }
-                            //     /*
-                            //     console.log(keyCode); // do kontroli ady wpisać 32 w SPACE_KEY
-                            //     */
-                            // // granica - obijanie się - tworzenei podstawowej funkcji
-                            // // nie działa
-                            // /*
-                            // function ensureBounds(sprite) { 
-                                //     if (sprite.x < 20){
-                                    //         sprite.x = 20;
-                                    //     }
-                                    //     if (sprite.y < 20) {
-                                        //         sprite.y = 20;
-                                        //     }
-                                        //     if (sprite.x + sprite.w > 480){
-                                            //         sprite.x = 480 - sprite.w;
-                                            //     }
-                                            //     if (sprite.y + sprite.h > 480) {
-                                                //         sprite.y = 480 - sprite.h;
-                                                //     }
-                                                // }
-                                                // */
-                                                // function setPosition(sprite){
-                                                    
-                                                    //     var e = document.getElementById(sprite.element);
-                                                    //     e.style.left = sprite.x + 'px';
-                                                    //     e.style.top = sprite.y + 'px';
-                                                    // };
-                                                    // function handleCondrols () {
-                                                        //     if (controller.up) {
-                                                            //         hero.y -= HERO_MOVEMENT;
-                                                            //     }
-                                                            //     if (controller.down) {
-                                                                //         hero.y += HERO_MOVEMENT;
-                                                                //     }
-                                                                //     if (controller.left) {
-                                                                    //         hero.x -= HERO_MOVEMENT;
-                                                                    //     }
-                                                                    //     if (controller.right) {
-                                                                        //         hero.x += HERO_MOVEMENT;
-                                                                        //     }
-                                                                        //     if (controller.space && laser.y <= 120) {
-                                                                            //         laser.x = hero.x + 9;
-                                                                            //         laser.y = hero.y - laser.h;
-                                                                            //     }
-                                                                            // }
-                                                                            
-                                                                            // //granica sceny przypisana dla hero
-                                                                            // // nie działa  
-                                                                            // /*
-                                                                            // ensureBounds(hero);
-                                                                            // */ 
-                                                                            
-                                                                            // function showSprites() {
-                                                                                //     setPosition(hero);
-                                                                                //     setPosition(laser);
-                                                                                //     for (var i = 0; i < enemies.length; i++){
-                                                                                    //         setPosition(enemies[i]); // dostanie się do elementu [i] w tablicy enemies
-//     }
-// }
-
-// function updatePositions() {
-//     for ( var i = 0; i < enemies.length; i++){
-    //         enemies[i].y +=4;
-    //         enemies[i].x += getRandom(7) - 3;
-    //     }
-    //     laser.y -= 12;
-    // }
-    
-    // function addEnemy() { 
-        //     if (getRandom(50) == 0) {
-            //         var elementName = 'enemy' + getRandom(10000000);
-            //         var enemy = createSprite(elementName, getRandom(450), -40, 35,  35);
-            
-            //         var element = document.createElement('div');
-            //         element.id = enemy.element;
-            //         element.className = 'enemy';
-            //         document.children[0].appendChild(element);
-            
-            //         enemies[enemies.length] = enemy;
-            //     }
-            // }
-            
-            // function getRandom(maxSize) {
-                //     return parseInt(Math.random() * maxSize);
-                // }
-                
-var LEFT_KEY = 37; // wyszło w Console
-var UP_KEY = 38; // wyszło w Console
-var RIGHT_KEY = 39; // wyszło w Console
-var DOWN_KEY = 40; // wyszło w Console
-var SPACE_KEY = 32; // wyszło w Console
-var HERO_MOVEMENT = 3; // prędkość
-
-
+// zrobic prototyp playera
+// posprzatac!!!!!!!
 let player = {
     sprite : document.getElementById('hero'),
     speed : 10,
@@ -146,36 +19,123 @@ let player = {
         }
     },
     shoot : function(){
-       let bullet = document.createElement("div");
-       bullet.id = "laser";
-       bullet.style.top = this.positionY + 'px';
-       bullet.style.left = this.positionX + 'px';
-       document.getElementById("GameBoard").appendChild(bullet);   
+        let bullet = new Bullet(this.positionX, this.positionY);
+        bullet.createSprite();
+        addBulletToArray(bullet);
+           
+        
      }
 }  
+function addBulletToArray(bullet)
+{
+    let isCreated = false;
+    for(let i=0; i < bullets.length; i++){
+        if(!bullets[i])
+        {
+            bullets[i] = bullet;
+            isCreated = true;
+            break;
+        }
+    
+    }
+    if(!isCreated)
+    {
+        bullets.push(bullet);
+    }
+}
 
 let enemies = [];
+let bullets = [];
 let previousDirection = "Right";
+let isLeftDirection = false;
+
 function moveEnemies(){
     let dir = previousDirection;
-    if( previousDirection == "Right" && enemies[enemies.length-1].positionX == 450){
+    if( enemies[enemies.length-1]  && previousDirection == "Right" && enemies[enemies.length-1].positionX == 450){
         dir = "Down";
+        isLeftDirection = false;
     }
     else if(previousDirection == "Down" ){
-        dir = "Left"
+        dir = "Left";
+        if (isLeftDirection == false){
+            dir = "Left";
+        }
+        else dir = "Right";
     }
-    else if(previousDirection == "Left" && enemies[0].positionX == 0)
+    else if(enemies[0] && previousDirection == "Left" && enemies[0].positionX == 20)
     {
         dir = 'Down';
+        isLeftDirection = true;
     }
 
     for(var i = 0;i < enemies.length;i++)
     {
-        enemies[i].move(dir);
+        if(enemies[i])
+        {
+            enemies[i].move(dir);
+        }
         
     }
     previousDirection = dir
 }
+
+function moveBullets(){
+    for(var i = 0; i < bullets.length; i++){
+        if( bullets[i]){
+        bullets[i].move();
+        }
+    }
+}
+// konstruktor prototypu funkji
+function Bullet(positionX, positionY){
+    this.power = 1;
+    this.speed = 5;
+    this.positionX = positionX;
+    this.positionY = positionY;
+    this.DOMElement;
+}
+
+Bullet.prototype.move = function(){
+    this.positionY -= 10;
+    this.DOMElement.style.top = this.positionY + 'px';
+}
+
+Bullet.prototype.createSprite = function(){
+
+    let bullet = document.createElement('div');
+    bullet.id = 'laser';
+    bullet.style.top = this.positionY + 'px';
+    bullet.style.left = this.positionX + 'px';
+    this.DOMElement = bullet;
+    document.getElementById("GameBoard").appendChild(bullet);
+}
+Bullet.prototype.delete = function(){
+    this.DOMElement.remove();
+}
+
+Enemy.prototype.delete = function(){
+    this.DOMElement.remove();
+}
+
+function checkBulletLifeTime(){
+    for(let i = 0; i < bullets.length; i++){
+        if( bullets[i] && bullets[i].positionY == 0 ){
+            bullets[i].delete();
+            delete bullets[i];
+        }
+        for( let j = 0; j < enemies.length; j++){
+            if(enemies[j] && bullets[i] && ((enemies[j].positionY + 35) >= bullets[i].positionY) && ((enemies[j].positionX + 35) >= bullets[i].positionX && enemies[j].positionX <= bullets[i].positionX) ){
+                enemies[j].delete();
+                bullets[i].delete();
+                delete bullets[i];
+                delete enemies[j];
+                break;
+            }
+        
+        }
+    }
+}
+
 
 function Enemy(positionX, positionY){
     this.speed = 5;
@@ -186,6 +146,7 @@ function Enemy(positionX, positionY){
 }
 
 Enemy.prototype.createSprite = function(){
+
     let enemy = document.createElement("div");
     enemy.id = "enemy";
     enemy.style.top = this.positionY + 'px';
@@ -237,87 +198,18 @@ function listenForKeysPressed(){
     }
 }
 
-
-/*
-function ensureBounds(sprite) {
- if (deltaX < (window.innerWidth-55)) {deltaX += 5;}
-                   square.style.setProperty("left", deltaX);
-                   square.style.marginLeft = deltaX+'px';
-                   //console.log('Left position:', deltaX);
-           break;
-               if (deltaY < (window.innerHeight-55)) {deltaY += 5;}
-                   square.style.setProperty("top", deltaY);
-                   square.style.marginTop = deltaY+'px';
-                   //console.log('Top position:', deltaY);
-           break;
-       }
-   }
-   window.addEventListener("keydown", move);
-   });
-
-   */
-    
-    
-    function loop(){
-        listenForKeysPressed();
+function loop(){
+    listenForKeysPressed();
+    if(enemies.length > 0){ 
         moveEnemies();
-        // updatePositions();
-        // handleCondrols();
-        // addEnemy();
-        
-        // showSprites();
     }
-    // evt - skrót od event tkj: 'e', 'ev'
-    //agrgument funkcji onmousemove jest obiekt typu Event
-    
+    if(bullets.length > 0){
+    moveBullets();
+    checkBulletLifeTime();
+    console.log(bullets.length);
+    }
+}
+   
 player.sprite.style.left = 240 + 'px';
+//let player = new Player(cos(?))
 setInterval(loop, 40);
-
-
-// var hero = createSprite('hero', 250, 460, 20, 20);
-// var laser = createSprite('laser', 0, -120, 2, 50);
-// //↑ to wszystko jest juz zamieszczone w createSprite ↑
-// var hero = new Object();
-// hero.element = 'hero';
-// hero.x = 250;
-// hero.y = 460;
-// hero.w = 20; //przypisanie długości bohatera - dane z  css
-// hero.h = 20; //przypisanie wysokosci bohatera - dane z  css
-
-// {
-//     constructor(spriteId)    
-//     {
-//         this.health = 100;    
-//         this.sprite = document.getElementById(spriteId);
-//         this.sprite.style.top = 100  + 'px';
-//         this.sprite.style.left = 100 + 'px'; 
-//     };
-
-//     Move(){
-//         console.log("dupa");    
-//      }
-// }
-// class GameEngine
-// {
-//     constructor()    
-//     {
-//         console.log("STWORZYLEM GAME ENGINE");    
-//         this.player = new Player('hero');
-//         this.enemies = new Array();  
-//     }
-//     ListenForKeysPressed(){
-//         document.onkeydown = function(evt) {
-//             console.log(evt);    
-//         }
-//     };
-//     loop() {
-//         this.ListenForKeysPressed();    
-//     };
-// }
-
-
-// // deklaracja biektu typu GameEngine
-// var game = new GameEngine();
-// setInterval(game.loop, 1000);
-
-
