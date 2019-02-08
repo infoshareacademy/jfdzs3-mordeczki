@@ -196,9 +196,120 @@ input[type="submit"] {
     text-align: center;
     padding: 30px;
   }
+.check {
+  text-align: center;
+}
+.check-paid-hide {
+
+}
   .advanteges__app_photo{
     width: 100%;
   }
+      /* calculator */
+#calculator {
+	width: 325px;
+	height: auto;
+	margin: 100px auto;
+	padding: 20px 20px 9px;
+	background: rgb(121, 113, 113);
+	background: rgb(121, 113, 113);
+	border-radius: 3px;
+  box-shadow: 0px 4px rgba(0, 0, 0, 0), 0px 10px 15px rgba(0, 0, 0, 0.2);
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  display: none;
+}
+
+.top span.clear {
+	float: left;
+}
+
+.top .screen {
+	height: 40px;
+	width: 212px;
+	float: right;
+	padding: 0 10px;
+	background: rgba(0, 0, 0, 0.2);
+	border-radius: 3px;
+	box-shadow: inset 0px 4px rgba(0, 0, 0, 0.2);
+	font-size: 17px;
+	line-height: 40px;
+	color: white;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+	text-align: right;
+	letter-spacing: 1px;
+}
+
+.keys, .top {
+  overflow: hidden;
+}
+
+.keys span, .top span.clear {
+	float: left;
+	position: relative;
+	top: 0;
+	cursor: pointer;
+	width: 66px;
+	height: 36px;
+	background: rgb(250, 250, 250);
+	border-radius: 3px;
+	box-shadow: 0px 4px rgba(0, 0, 0, 0.2);
+	margin: 0 7px 11px 0;
+	color: rgb(168, 165, 165);
+	line-height: 36px;
+	text-align: center;
+	user-select: none;
+	transition: all 0.2s ease;
+}
+
+.keys span.operator {
+	background: rgb(250, 250, 250);
+	margin-right: 0;
+}
+
+.keys span.eval {
+	background: rgb(155, 0, 77);
+	box-shadow: 0px 4px  rgb(119, 0, 60);
+	color: rgb(250, 250, 250);
+}
+
+.top span.clear {
+	background: rgb(155, 0, 77);
+	box-shadow: 0px 4px rgb(119, 0, 60);
+	color: white;
+}
+
+.keys span:hover {
+	background: #9c89f6;
+	box-shadow: 0px 4px #6b54d3;
+	color: white;
+}
+
+.keys span.eval:hover {
+	background: #abb850;
+	box-shadow: 0px 4px #717a33;
+	color: #ffffff;
+}
+
+.top span.clear:hover {
+	background: #f68991;
+	box-shadow: 0px 4px #d3545d;
+	color: white;
+}
+
+.keys span:active {
+	box-shadow: 0px 0px #6b54d3;
+	top: 4px;
+}
+
+.keys span.eval:active {
+	box-shadow: 0px 0px #717a33;
+	top: 4px;
+}
+
+.top span.clear:active {
+	top: 4px;
+	box-shadow: 0px 0px #d3545d;
+}
 
   @media only screen and (min-width: 1000px){
       .col-sm-4 {
@@ -371,3 +482,5 @@ input[type="submit"] {
     }
 
     /* section end Marcin */
+
+
