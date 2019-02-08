@@ -34,3 +34,9 @@ justify-content: center;
     height: 35px;
     position: absolute;
 }
+.game_rules{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    padding-block-start: 20px;
+    }  

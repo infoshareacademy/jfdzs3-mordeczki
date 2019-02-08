@@ -1,5 +1,6 @@
 // zrobic prototyp playera
 // posprzatac!!!!!!!
+//let player = new Player(cos(?))
 let player = {
     sprite : document.getElementById('hero'),
     speed : 10,
@@ -79,13 +80,6 @@ function moveEnemies(){
     previousDirection = dir
 }
 
-function moveBullets(){
-    for(var i = 0; i < bullets.length; i++){
-        if( bullets[i]){
-        bullets[i].move();
-        }
-    }
-}
 // konstruktor prototypu funkji
 function Bullet(positionX, positionY){
     this.power = 1;
@@ -94,6 +88,13 @@ function Bullet(positionX, positionY){
     this.positionY = positionY;
     this.DOMElement;
 }
+        function moveBullets(){
+            for(var i = 0; i < bullets.length; i++){
+                if( bullets[i]){
+                bullets[i].move();
+                }
+            }
+        }
 
 Bullet.prototype.move = function(){
     this.positionY -= 10;
@@ -211,5 +212,4 @@ function loop(){
 }
    
 player.sprite.style.left = 240 + 'px';
-//let player = new Player(cos(?))
 setInterval(loop, 40);
