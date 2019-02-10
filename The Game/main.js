@@ -1,7 +1,7 @@
 // zrobic prototyp playera
 // posprzatac!!!!!!!
 //let player = new Player(cos(?))
-
+// querySelector nowsze niż getElementById - spradź!!
 
 let player = {
     sprite : document.getElementById('hero'),
