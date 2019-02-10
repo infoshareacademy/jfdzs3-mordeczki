@@ -9,30 +9,31 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 </head>
 <body id="GameBoard">
-    <div id="background"></div>
-    <div><img id= "hero" src="img/hero_lipstick.png"></div>
-    <!--<div><img id= "bullet" src="img/bullet_hero.png"></div> -->
-      
-
-    <div class="container">
-        <div class="row">
-            <div class="col"></div>
-            <div class="col">
-                <div class="game_rules">
-                    REGULAMIN GRY :
-                   
-                     Space Invaders jest grą shoot 'em up typu fixed shooter, tj. 
-                    Gracz kontroluje działko, przemieszczając je na dole ekranu i strzelając do kosmitów. 
-                    Celem jest zniszczenie pięciu rzędów kosmitów, po jedenaście przeciwników w każdym, które poruszają się poziomo tam i z powrotem oraz opadają na dół ekranu. 
-                    Gracz pokonuje kosmitę, zyskując przy tym pewną liczbę punktów, zestrzeliwując go z działka. 
-                    Im więcej kosmitów gracz zniszczył, tym szybsze są ich ruchy. Pokonanie jednej fali kosmitów powoduje nadejście kolejnej, trudniejszej – cykl ten może trwać w nieskończoność.
-                    Kosmici starają się zniszczyć działko, strzelając w nie. Jednocześnie zbliżają się ku dołowi planszy. Gdy tam dotrą, oznacza to, że ich inwazja się powiodła, a gra się kończy. 
-
-                    
-                </div>
+    <section class="container_felx">
+        <div class="container__game_board">
+            <div id="background"></div>
+            <div><img id= "hero" src="img/hero_lipstick.png"></div>
+            <!--<div><img id= "bullet" src="img/bullet_hero.png"></div> -->
+        </div>
+        <div class="container__game_rules">
+            <div class="game_rules">
+        
+                <h3 class="paragrah__game_rules">REGULAMIN GRY :<h3>
+            
+                <h6 class="text__game_rules">
+                    <ol>
+                        <li>Invaders jest grą shoot 'em up typu fixed shooter
+                        </li>
+                        <li>Gracz kontroluje działko, przemieszczając je na dole ekranu i strzelając do kosmitów. </li>
+                        <li>Celem jest zniszczenie trzech rzędów kosmitów, po pieciu przeciwników w każdym, które poruszają się poziomo tam i z powrotem oraz opadają na dół ekranu. </li>
+                        <li> Pokonanie jednej fali kosmitów powoduje nadejście kolejnej, trudniejszej</li>
+                        
+                        <li>Kosmici starają się zniszczyć działko, strzelając w nie. Jednocześnie zbliżają się ku dołowi planszy. Gdy tam dotrą, oznacza to, że ich inwazja się powiodła, a gra się kończy.</li>
+                    </ol>
+                </h6>   
             </div> 
-        </div> 
-    </div>
+        </div>
+    </section>
     <script src="main.js"></script>
 </body>
 </html>

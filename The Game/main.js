@@ -1,6 +1,8 @@
 // zrobic prototyp playera
 // posprzatac!!!!!!!
 //let player = new Player(cos(?))
+
+
 let player = {
     sprite : document.getElementById('hero'),
     speed : 10,

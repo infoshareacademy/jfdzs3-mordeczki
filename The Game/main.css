@@ -15,13 +15,13 @@ justify-content: center;
     
 }
 #background{
-    background: rgb(210, 216, 176);
+    /* background: rgb(210, 216, 176); */
     width: 500px;
     height: 500px;
     position: absolute;
     left: 0px;
     top: 0px;
-    }
+}
 #laser{
     background: red;
     width: 5px;
@@ -34,9 +34,27 @@ justify-content: center;
     height: 35px;
     position: absolute;
 }
-.game_rules{
+
+.container_flex{
     display: flex;
-    flex-direction: row;
-    justify-content: right;
+    justify-content: space-between;
+
+}  
+.container__game_board{
+    display: flex;
+    justify-content: space-between;
+} 
+.container__game_rules{
+    background:  rgb(210, 216, 176);;
     padding-block-start: 20px;
+    height: 500px;
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
     }  
+.paragrah__game_rules{
+    text-align: center;
+    }
+.text__game_rules{
+    padding: 20px;
+}
