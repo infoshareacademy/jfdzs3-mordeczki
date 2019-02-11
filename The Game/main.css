@@ -29,7 +29,8 @@ justify-content: center;
     position: absolute;
 }
 #enemy{
-    background: blue;
+    background-image: url("img/enemy_lips_black.png");
+   /* background: blue; */
     width: 35px;
     height: 35px;
     position: absolute;
@@ -45,7 +46,7 @@ justify-content: center;
     justify-content: space-between;
 } 
 .container__game_rules{
-    background:  rgb(210, 216, 176);;
+    background:  rgb(210, 216, 176);
     padding-block-start: 20px;
     height: 500px;
     width: 500px;

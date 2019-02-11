@@ -13,11 +13,17 @@ let player = {
     move : function(key){
         if( key == 'ArrowLeft' ){
             this.positionX -= this.speed;
+            if ( this.positionX <= 0 ){
+                this.positionX = 0;
+            }
             this.sprite.style.left = this.positionX + 'px';
             console.log(this.sprite.style.left)
         }
         else{
             this.positionX += this.speed;
+            if ( this.positionX >= 450){
+                this.positionX = 450;
+            }
             this.sprite.style.left = this.positionX + 'px';
         }
     },
@@ -52,20 +58,44 @@ let bullets = [];
 let previousDirection = "Right";
 let isLeftDirection = false;
 
+function findFirstEnemyOnLeft(){
+    let minimumPositionX = 450;
+    let enemyIndex = 0;
+    for ( let i = 0; i < enemies.length; i ++){
+        if( enemies[i]  && enemies[i].positionX < minimumPositionX ){
+            minimumPositionX = enemies[i].positionX;
+            enemyIndex = i;
+        }
+
+    }
+    return enemies[enemyIndex]; 
+}
+function findFirstEnemyOnRight(){
+    let maxPositionX = 0;
+    let enemyIndex = 0;
+    for ( let i = 0; i < enemies.length; i ++){
+        if( enemies[i] && enemies[i].positionX > maxPositionX ){
+            maxPositionX = enemies[i].positionX;
+            enemyIndex = i;
+        }
+
+    }
+    return enemies[enemyIndex]; 
+}
+
 function moveEnemies(){
     let dir = previousDirection;
-    if( enemies[enemies.length-1]  && previousDirection == "Right" && enemies[enemies.length-1].positionX == 450){
+    if( previousDirection == "Right" && findFirstEnemyOnRight().positionX == 450){
         dir = "Down";
         isLeftDirection = false;
     }
     else if(previousDirection == "Down" ){
-        dir = "Left";
         if (isLeftDirection == false){
             dir = "Left";
         }
         else dir = "Right";
     }
-    else if(enemies[0] && previousDirection == "Left" && enemies[0].positionX == 20)
+    else if(previousDirection == "Left" && findFirstEnemyOnLeft().positionX == 20)
     {
         dir = 'Down';
         isLeftDirection = true;
@@ -82,7 +112,7 @@ function moveEnemies(){
     previousDirection = dir
 }
 
-// konstruktor prototypu funkji
+
 function Bullet(positionX, positionY){
     this.power = 1;
     this.speed = 5;
@@ -102,6 +132,7 @@ Bullet.prototype.move = function(){
     this.positionY -= 10;
     this.DOMElement.style.top = this.positionY + 'px';
 }
+
 
 Bullet.prototype.createSprite = function(){
 
@@ -128,10 +159,14 @@ function checkBulletLifeTime(){
         }
         for( let j = 0; j < enemies.length; j++){
             if(enemies[j] && bullets[i] && ((enemies[j].positionY + 35) >= bullets[i].positionY) && ((enemies[j].positionX + 35) >= bullets[i].positionX && enemies[j].positionX <= bullets[i].positionX) ){
-                enemies[j].delete();
+                enemies[j].health -= 1;
+                enemies[j].DOMElement.firstChild.src = "img/enemy_lips_red.png"
+                if ( enemies[j].health == 0 ){
+                    enemies[j].delete();
+                    delete enemies[j];
+                }
                 bullets[i].delete();
                 delete bullets[i];
-                delete enemies[j];
                 break;
             }
         
@@ -149,11 +184,18 @@ function Enemy(positionX, positionY){
 }
 
 Enemy.prototype.createSprite = function(){
+    let enemyImg = document.createElement('img');
+    enemyImg.id = "image"
+    enemyImg.src = "img/enemy_lips_black.png";
+    enemyImg.style.width = '40px';
+    enemyImg.style.height = '25px';
+
 
     let enemy = document.createElement("div");
     enemy.id = "enemy";
     enemy.style.top = this.positionY + 'px';
     enemy.style.left = this.positionX + 'px';
+    enemy.appendChild(enemyImg);
     this.DOMElement = enemy;
     document.getElementById("GameBoard").appendChild(enemy);
 }
@@ -174,11 +216,30 @@ Enemy.prototype.move = function(direction){
 }
 
 function createEnemies(quantity){
+    let arrayRow = 0;
+    let arrayColumnPosition = 0;
+    let arrayRowPosition = 10;
     for( i = 0; i< quantity; i++){
-       let enemy = new Enemy(i * 50, 10);
-       enemy.createSprite();
-       enemies.push(enemy);
+        if((i !== 0) && (i % 5 == 0))
+        {
+            arrayRow +=1;
+            arrayRowPosition += 50;
+            arrayColumnPosition = 0; 
+        }
+        let enemy = new Enemy( arrayColumnPosition * 50, arrayRowPosition);
+        arrayColumnPosition ++;
+        enemy.createSprite();
+        enemies.push(enemy);
+    //     if( i < 5 ){
+    //    }
+    //    if( i >= 5 && i < 10 ){
+    //        enemies[1].push(enemy);
+    //    }
+    //    if( i > 10){
+    //    enemies[2].push(enemy);
+    //    }
     }
+
 }
 
 function listenForKeysPressed(){
@@ -192,7 +253,7 @@ function listenForKeysPressed(){
             player.shoot();
         }
         if (evt.key == 'f'){
-            createEnemies(5);
+            createEnemies(20);
         }
         if(evt.key =='g'){
             
