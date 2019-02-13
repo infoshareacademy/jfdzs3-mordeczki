@@ -2,12 +2,28 @@ let previousDirection = "Right";
 let isLeftDirection = false;
 
 class GameEngine {
-    constructor() { 
+    constructor() {
         this.enemies = [];
         this.bullets = [];
         this.bulletsEnemies = [];
         this.player = new Player();
-
+        this.score = 0;
+        this.boardScore = (() => {
+            const scoreInput = document.getElementById('scoreInput');
+            scoreInput.style.position = "absolute"
+            scoreInput.style.left = "510px";
+            scoreInput.style.width = "100px";
+            scoreInput.style.height = "20px";
+            return scoreInput; // stworzyłam znacznik imput w htmlu i wyciagnełam go do js   
+        })()
+        // this.score1 = (() => {
+        //     for ( var i = 0; i < this.enemies.length; i++){
+        //         if( this.enemies[i] == null ) {
+        //           this.score + 10; 
+        //         }
+        //     } 
+        //     console.log(this.enemies[i]);
+        // })()
     }
     addBulletToArray(bullet) {
         let isCreated = false;
@@ -17,13 +33,12 @@ class GameEngine {
                 isCreated = true;
                 break;
             }
-
         }
         if (!isCreated) {
             this.bullets.push(bullet);
         }
     }
-    createEnemies(quantity) { // funckaj strzełkowa
+    createEnemies(quantity) { // funckcja strzałkowa
         let arrayColumnPosition = 0;
         let arrayRowPosition = 10;
         for (let i = 0; i < quantity; i++) {
@@ -35,8 +50,18 @@ class GameEngine {
             arrayColumnPosition++;
             this.enemies.push(enemy);
         }
-
     }
+    endGameBoard() {
+        for (let i = 0; i < this.enemies.length; i++) {
+            if (!this.enemies[i]) {
+                this.enemies[i] = null;
+                this.DOMElement = document.createElement('div');
+
+            }
+
+        }
+    }
+
     findFirstEnemyOnLeft() {
         let minimumPositionX = 450;
         let enemyIndex = 0;
@@ -56,7 +81,6 @@ class GameEngine {
                 maxPositionX = this.enemies[i].positionX;
                 enemyIndex = i;
             }
-
         }
         return this.enemies[enemyIndex];
     }
@@ -66,13 +90,13 @@ class GameEngine {
                 this.bullets[i].move();
             }
         }
-        for (var i = 0; i < this.bulletsEnemies.length; i++){
+        for (var i = 0; i < this.bulletsEnemies.length; i++) {
             if (this.bulletsEnemies[j]) {
                 this.bulletsEnemies[j].move();
             }
         }
     }
-   
+
     moveEnemies() {
         let dir = previousDirection;
         if (previousDirection == "Right" && this.findFirstEnemyOnRight().positionX == 450) {
@@ -94,12 +118,11 @@ class GameEngine {
             if (this.enemies[i]) {
                 this.enemies[i].move(dir);
             }
-
         }
         previousDirection = dir
     }
     listenForKeysPressed(gameObject) {
-        
+
         document.onkeydown = function (evt) {
             if (evt.key == 'ArrowRight' || evt.key == 'ArrowLeft') {
                 console.log(evt)
@@ -112,7 +135,6 @@ class GameEngine {
                 gameObject.createEnemies(20);
             }
             if (evt.key == 'g') {
-
             }
         }
     }
@@ -129,12 +151,15 @@ class GameEngine {
                     if (this.enemies[j].health == 0) {
                         this.enemies[j].delete();
                         delete this.enemies[j];
+                        this.score += 100;
+                        // game1.boardScore.text = game1.score;
+                        this.boardScore = game1.score;
+                        console.log(game1.score)
                     }
                     this.bullets[i].delete();
                     delete this.bullets[i];
                     break;
                 }
-
             }
         }
     }
@@ -147,7 +172,7 @@ class Player {
         this.positionX = 240;
         this.positionY = 480;
         this.sprite.style.left = this.positionX + 'px';
-        
+
     }
     move(key) {
         if (key == 'ArrowLeft') {
@@ -211,10 +236,10 @@ class Enemy {
         }
 
     }
-    shoot(){
+    shoot() {
         let enemyBullet = document.createElement("div");
         enemyBullet.style.top = this.positionX + "px";
-        enemyBullet.left = this.positionY + "px"; 
+        enemyBullet.left = this.positionY + "px";
         let enemyBulletImg = createElement("img");
         enemyBulletImg.id = "image"
         enemyBulletImg.src = "img/water_drop.jpg"
@@ -236,7 +261,7 @@ class Bullet {
         this.DOMElement;
     }
     createSprite() {
-          // funckja strzałkowa ;img
+        // funckja strzałkowa ;img
         let bullet = document.createElement('div');
         bullet.id = 'laser';
         bullet.style.top = this.positionY + 'px';
@@ -272,5 +297,6 @@ function loop() {
         game1.checkBulletLifeTime();
     }
 }
+
 
 setInterval(loop, 40);
