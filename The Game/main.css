@@ -30,7 +30,6 @@ justify-content: center;
 }
 #enemy{
     background-image: url("img/enemy_lips_black.png");
-   /* background: blue; */
     width: 35px;
     height: 35px;
     position: absolute;
