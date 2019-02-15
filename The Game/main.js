@@ -1,20 +1,47 @@
 let previousDirection = "Right";
 let isLeftDirection = false;
 
-class GameEngine {
-    constructor() {
+class GameEngine { // tworzę szablon do wykorzystywania
+    constructor() { // szablon na konstruktora , który 
         this.enemies = [];
         this.bullets = [];
         this.bulletsEnemies = [];
         this.player = new Player();
         this.score = 0;
+        this.level = 1;
+        this.playerLive = 3;
         this.boardScore = (() => {
-            const scoreInput = document.getElementById('scoreInput');
-            scoreInput.style.position = "absolute"
-            scoreInput.style.left = "510px";
-            scoreInput.style.width = "100px";
+            const scoreInput = document.createElement('div'); // tworzenie div w js 
+            scoreInput.id = "score";
+            scoreInput.style.position = "absolute";
+            scoreInput.style.left = "10px"; 
+            //scoreInput.style.width = "100px";
             scoreInput.style.height = "20px";
-            return scoreInput; // stworzyłam znacznik imput w htmlu i wyciagnełam go do js   
+            scoreInput.innerHTML = "score: " + this.score; 
+            document.getElementById('GameBoard').appendChild(scoreInput); // wklejenie do html
+            return scoreInput; //  
+        })()
+        this.boardLevel = (() => {
+            const levelInput = document.createElement('div'); // tworzenie div w js 
+            levelInput.id = "level"; 
+            levelInput.style.position = "absolute";
+            levelInput.style.left = "220px"; 
+            //scoreInput.style.width = "100px";
+            levelInput.style.height = "20px";
+            levelInput.innerHTML = "level: " + this.level; 
+            document.getElementById('GameBoard').appendChild(levelInput); // wklejenie do html
+            return levelInput; //  
+        })()
+        this.boardPlayerLive = (() => {
+            const playerLiveInput = document.createElement('div'); // tworzenie div w js 
+            playerLiveInput.id = "level"; 
+            playerLiveInput.style.position = "absolute";
+            playerLiveInput.style.left = "450px"; 
+            //scoreInput.style.width = "100px";
+            playerLiveInput.style.height = "20px";
+            playerLiveInput.innerHTML = "live: " + this.playerLive; 
+            document.getElementById('GameBoard').appendChild(playerLiveInput); // wklejenie do html
+            return playerLiveInput; //  
         })()
         // this.score1 = (() => {
         //     for ( var i = 0; i < this.enemies.length; i++){
@@ -38,6 +65,9 @@ class GameEngine {
             this.bullets.push(bullet);
         }
     }
+
+
+
     createEnemies(quantity) { // funckcja strzałkowa
         let arrayColumnPosition = 0;
         let arrayRowPosition = 10;
@@ -54,8 +84,7 @@ class GameEngine {
     endGameBoard() {
         for (let i = 0; i < this.enemies.length; i++) {
             if (!this.enemies[i]) {
-                this.enemies[i] = null;
-                this.DOMElement = document.createElement('div');
+                document.querySelector("container__game_rules").style.display = action;
 
             }
 
@@ -121,23 +150,7 @@ class GameEngine {
         }
         previousDirection = dir
     }
-    listenForKeysPressed(gameObject) {
 
-        document.onkeydown = function (evt) {
-            if (evt.key == 'ArrowRight' || evt.key == 'ArrowLeft') {
-                console.log(evt)
-                gameObject.player.move(evt.key);
-            }
-            if (evt.key == ' ') {
-                gameObject.player.shoot(gameObject);
-            }
-            if (evt.key == 'f') {
-                gameObject.createEnemies(20);
-            }
-            if (evt.key == 'g') {
-            }
-        }
-    }
     checkBulletLifeTime() {
         for (let i = 0; i < this.bullets.length; i++) {
             if (this.bullets[i] && this.bullets[i].positionY == 0) {
@@ -153,7 +166,7 @@ class GameEngine {
                         delete this.enemies[j];
                         this.score += 100;
                         // game1.boardScore.text = game1.score;
-                        this.boardScore = game1.score;
+                        this.boardScore.innerHTML = "score: " + this.score;
                         console.log(game1.score)
                     }
                     this.bullets[i].delete();
@@ -236,16 +249,18 @@ class Enemy {
         }
 
     }
-    shoot() {
+    shoot(gameObject) {
         let enemyBullet = document.createElement("div");
         enemyBullet.style.top = this.positionX + "px";
-        enemyBullet.left = this.positionY + "px";
-        let enemyBulletImg = createElement("img");
-        enemyBulletImg.id = "image"
-        enemyBulletImg.src = "img/water_drop.jpg"
+        enemyBullet.style.left = this.positionY + "px";
+        let enemyBulletImg = document.createElement("img");
+        enemyBulletImg.id = "image";
+        enemyBulletImg.src = "img/water_drop.jpg";
         enemyBulletImg.style.width = "5px";
         enemyBulletImg.style.height = "5px";
         enemyBullet.appendChild(enemyBulletImg);
+        document.getElementById('GameBoard').appendChild(enemyBullet);
+        gameObject.bulletsEnemies.push(enemies);
     }
     delete() {
         this.DOMElement.remove();
@@ -288,13 +303,28 @@ function loop() {
     if (isFirstCyclic == true) {
         isFirstCyclic = false;
     }
-    game1.listenForKeysPressed(game1);
     if (game1.enemies.length > 0) {
         game1.moveEnemies();
+        game1.addBulletToArray();
     }
     if (game1.bullets.length > 0) {
         game1.moveBullets();
         game1.checkBulletLifeTime();
+    }
+    document.onkeydown = function (evt) {
+        if (evt.key == 'ArrowRight' || evt.key == 'ArrowLeft') {
+            console.log(evt)
+            game1.player.move(evt.key);
+        }
+        if (evt.key == ' ') {
+            game1.player.shoot(game1);
+        }
+        if (evt.key == 'f') {
+            game1.createEnemies(20);
+        }
+        if (evt.key == 'g') {
+            
+        }
     }
 }
 
