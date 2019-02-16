@@ -1,86 +1,100 @@
 let previousDirection = "Right";
 let isLeftDirection = false;
 
-class GameEngine { // tworzę szablon do wykorzystywania
-    constructor() { // szablon na konstruktora , który 
-        this.enemies = [];
+class GameEngine { 
+    constructor(numberOfEnemies) { 
+        this.numberOfEnemies = numberOfEnemies;
+        this.enemies = (() => {
+            let enemiesArr = [];
+            let arrayColumnPosition = 0; 
+            let arrayRowPosition = 10;
+            for (let i = 0; i < this.numberOfEnemies; i++) {
+                if ((i !== 0) && (i % 5 == 0)) {
+                    arrayRowPosition += 50;
+                    arrayColumnPosition = 0;
+                }
+                let enemy = new Enemy(arrayColumnPosition * 50, arrayRowPosition);
+                arrayColumnPosition++;
+                enemiesArr.push(enemy);
+            }
+            return enemiesArr;
+        })()
         this.bullets = [];
         this.bulletsEnemies = [];
         this.player = new Player();
         this.score = 0;
         this.level = 1;
-        this.playerLive = 3;
-        this.boardScore = (() => {
-            const scoreInput = document.createElement('div'); // tworzenie div w js 
+        this.boardScore = (() => { 
+            const scoreInput = document.createElement('div'); 
             scoreInput.id = "score";
             scoreInput.style.position = "absolute";
-            scoreInput.style.left = "10px"; 
-            //scoreInput.style.width = "100px";
+            scoreInput.style.left = "10px";
             scoreInput.style.height = "20px";
-            scoreInput.innerHTML = "score: " + this.score; 
-            document.getElementById('GameBoard').appendChild(scoreInput); // wklejenie do html
-            return scoreInput; //  
+            scoreInput.innerHTML = "score: " + this.score;
+            document.getElementById('GameBoard').appendChild(scoreInput); 
+            return scoreInput; 
         })()
         this.boardLevel = (() => {
-            const levelInput = document.createElement('div'); // tworzenie div w js 
+            const levelInput = document.createElement('div'); 
             levelInput.id = "level"; 
             levelInput.style.position = "absolute";
-            levelInput.style.left = "220px"; 
-            //scoreInput.style.width = "100px";
+            levelInput.style.left = "220px";
             levelInput.style.height = "20px";
             levelInput.innerHTML = "level: " + this.level; 
-            document.getElementById('GameBoard').appendChild(levelInput); // wklejenie do html
-            return levelInput; //  
+            document.getElementById('GameBoard').appendChild(levelInput);
+            return levelInput;
         })()
-        this.boardPlayerLive = (() => {
-            const playerLiveInput = document.createElement('div'); // tworzenie div w js 
-            playerLiveInput.id = "level"; 
-            playerLiveInput.style.position = "absolute";
-            playerLiveInput.style.left = "450px"; 
-            //scoreInput.style.width = "100px";
-            playerLiveInput.style.height = "20px";
-            playerLiveInput.innerHTML = "live: " + this.playerLive; 
-            document.getElementById('GameBoard').appendChild(playerLiveInput); // wklejenie do html
-            return playerLiveInput; //  
-        })()
-        // this.score1 = (() => {
-        //     for ( var i = 0; i < this.enemies.length; i++){
-        //         if( this.enemies[i] == null ) {
-        //           this.score + 10; 
-        //         }
-        //     } 
-        //     console.log(this.enemies[i]);
-        // })()
     }
     addBulletToArray(bullet) {
-        let isCreated = false;
-        for (let i = 0; i < this.bullets.length; i++) {
+        let isCreated = false; 
+        for (let i = 0; i < this.bullets.length; i++) { 
             if (!this.bullets[i]) {
                 this.bullets[i] = bullet;
                 isCreated = true;
                 break;
             }
         }
-        if (!isCreated) {
-            this.bullets.push(bullet);
+        //this.createEnemies(bullet)
+        if (!isCreated) { // następnym etapem w  tej funckji jest  ???????????????
+            this.bullets.push(bullet); // do zmiennej this.bullet (która jest kategorią w konstruktorze w klasie GameEngine) dodajemy do tablicy bullet.
         }
     }
-
-
-
-    createEnemies(quantity) { // funckcja strzałkowa
-        let arrayColumnPosition = 0;
+    checkNextLevel(){
+        let isNextLevelNeeded = true;
+        for( let i = 0; i < this.enemies.length; i++){
+            if(this.enemies[i]){
+                isNextLevelNeeded = false;
+                break;
+            }
+        }
+        return isNextLevelNeeded;
+    }   
+    nextLevel(){
+        this.level += 1;
+        this.boardLevel.innerHTML = "level: " + this.level;
+        previousDirection = "Right"
+        this.createNewEnemies(30);
+    
+    }
+    createNewEnemies(quantity){
+        let arrayColumnPosition = 0; 
         let arrayRowPosition = 10;
-        for (let i = 0; i < quantity; i++) {
-            if ((i !== 0) && (i % 5 == 0)) {
+        for(let i = 0; i < quantity; i++){
+            if ((i !== 0) && (i % 5 == 0)) { //  bez początkowego co piaty element
                 arrayRowPosition += 50;
                 arrayColumnPosition = 0;
             }
             let enemy = new Enemy(arrayColumnPosition * 50, arrayRowPosition);
             arrayColumnPosition++;
-            this.enemies.push(enemy);
+            if( i < this.enemies.length && !this.enemies[i]){
+                this.enemies[i] = enemy;
+            }
+            else{
+                this.enemies.push(enemy);
+            }
         }
     }
+
     endGameBoard() {
         for (let i = 0; i < this.enemies.length; i++) {
             if (!this.enemies[i]) {
@@ -91,10 +105,10 @@ class GameEngine { // tworzę szablon do wykorzystywania
         }
     }
 
-    findFirstEnemyOnLeft() {
-        let minimumPositionX = 450;
-        let enemyIndex = 0;
-        for (let i = 0; i < this.enemies.length; i++) {
+    findFirstEnemyOnLeft() { // definiujemy metodę z funckją 
+        let minimumPositionX = 450; // definiujemy zmienną (tworzymy szufladkę) minimumPositionX i przypisujemy do niej wartość 450;
+        let enemyIndex = 0; // definiujemy zmienną (tworzymy szufladkę) enemyIndex i przypisujemy do niej wartość początkową = 0;
+        for (let i = 0; i < this.enemies.length; i++) { 
             if (this.enemies[i] && this.enemies[i].positionX < minimumPositionX) {
                 minimumPositionX = this.enemies[i].positionX;
                 enemyIndex = i;
@@ -185,6 +199,16 @@ class Player {
         this.positionX = 240;
         this.positionY = 480;
         this.sprite.style.left = this.positionX + 'px';
+        this.boardPlayerLive = (() => {
+            const playerLiveInput = document.createElement('div'); 
+            playerLiveInput.id = "level"; 
+            playerLiveInput.style.position = "absolute";
+            playerLiveInput.style.left = "450px"; 
+            playerLiveInput.style.height = "20px";
+            playerLiveInput.innerHTML = "live: " + this.health; 
+            document.getElementById('GameBoard').appendChild(playerLiveInput);
+            return playerLiveInput;  
+        })()
 
     }
     move(key) {
@@ -211,8 +235,8 @@ class Player {
     }
 }
 class Enemy {
-    constructor(positionX, positionY) {
-        this.speed = 5;
+    constructor(positionX, positionY,) { // param - speed
+        this.speed = 5 ; // speed;
         this.health = 2;
         this.positionX = positionX;
         this.positionY = positionY;
@@ -297,7 +321,7 @@ class Bullet {
 
 let isFirstCyclic = true;
 
-var game1 = new GameEngine();
+var game1 = new GameEngine(20);
 function loop() {
 
     if (isFirstCyclic == true) {
@@ -311,6 +335,10 @@ function loop() {
         game1.moveBullets();
         game1.checkBulletLifeTime();
     }
+    if ( game1.checkNextLevel()){
+        game1.nextLevel();
+
+    }
     document.onkeydown = function (evt) {
         if (evt.key == 'ArrowRight' || evt.key == 'ArrowLeft') {
             console.log(evt)
@@ -318,9 +346,6 @@ function loop() {
         }
         if (evt.key == ' ') {
             game1.player.shoot(game1);
-        }
-        if (evt.key == 'f') {
-            game1.createEnemies(20);
         }
         if (evt.key == 'g') {
             
