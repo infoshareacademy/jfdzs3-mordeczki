@@ -8,10 +8,10 @@ CookieAlert.init();
 //calculator
 function sumValues() {
 	let num1, num2, res;
-	num1 = Number(document.hiddenCalculator.txtnum1.value);
-	num2 = Number(document.hiddenCalculator.txtnum2.value);
+	num1 = Number(document.querySelector(".txtnum1").value);
+	num2 = Number(document.querySelector(".txtnum2").value);
 	res = num1 + num2 + ' zł';
-	document.calculator.txtres.value = res;
+	document.querySelector(".txtres").value = res;
 }
 
 let btnShowCalculator = document.querySelector('.check-paid');
