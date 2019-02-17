@@ -55,8 +55,8 @@ class GameEngine {
             }
         }
         //this.createEnemies(bullet)
-        if (!isCreated) { // następnym etapem w  tej funckji jest  ???????????????
-            this.bullets.push(bullet); // do zmiennej this.bullet (która jest kategorią w konstruktorze w klasie GameEngine) dodajemy do tablicy bullet.
+        if (!isCreated) { 
+            this.bullets.push(bullet);
         }
     }
     checkNextLevel(){
@@ -105,9 +105,9 @@ class GameEngine {
         }
     }
 
-    findFirstEnemyOnLeft() { // definiujemy metodę z funckją 
-        let minimumPositionX = 450; // definiujemy zmienną (tworzymy szufladkę) minimumPositionX i przypisujemy do niej wartość 450;
-        let enemyIndex = 0; // definiujemy zmienną (tworzymy szufladkę) enemyIndex i przypisujemy do niej wartość początkową = 0;
+    findFirstEnemyOnLeft() { 
+        let minimumPositionX = 450; 
+        let enemyIndex = 0;
         for (let i = 0; i < this.enemies.length; i++) { 
             if (this.enemies[i] && this.enemies[i].positionX < minimumPositionX) {
                 minimumPositionX = this.enemies[i].positionX;
