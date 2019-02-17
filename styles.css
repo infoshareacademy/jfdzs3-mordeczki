@@ -1,0 +1,389 @@
+html * {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+body {
+    width:100%;
+    margin: auto;
+
+}
+#menu-wide {
+    background-color:black;
+    position: fixed;
+	z-index: 10;
+}
+.logobutton .logo {
+    display:flex;
+    padding:10px;
+    width:200px;
+}
+.navbar-nav {
+    align-items: center;
+}
+.navbar-toggler {
+    background-image: url(img/iconfinder_menu-alt_134216.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#filip {}
+.col-sm img {
+    width:100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /* also advanteges__app section -> justyna*/
+}
+.menu a {
+    color:white;
+    text-decoration: none;
+    font-size:1.2rem;
+}
+.menu a:hover {
+    color:rgb(155, 0, 77);
+}
+.about-us, .contact {
+    text-align: center;
+    margin-bottom: 10px;
+}
+.element {
+    display:inline-block;
+    width: 337px;;
+    height: 300px;
+    text-align:center;
+    
+}
+.element img {
+    margin-left: 90px;
+}
+.element article {
+    text-align: center;
+    margin-left: 15px;
+    margin-right: 15px;
+    font-size: 16px; 
+}
+.element article a {
+    font-size: 25px;
+    font-weight: bold;
+}
+input[type="submit"] {
+    color: white;
+    font-weight: bold;
+    font-size:16px;
+    width: 300px;
+    height: 50px;
+    border-color: rgb(155, 0, 77);
+    border-radius: 5px;
+    background: rgb(155, 0, 77);
+    margin-bottom: 50px;
+    margin-left: 522px;
+}
+.fb, .slack, .phone {
+    display: inline-block;
+    width: 90px;;
+    height: 90px;
+    margin-left: 15px;
+    margin-top: 50px;
+}
+.contact-container {
+    margin-left: 510px;
+    margin-bottom: 50px;
+}
+.about-us a, .contact {
+    font-size: 40px;
+}
+
+.team {
+    display: flex;
+    justify-content: center;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 250px;
+    height: 300px;
+    perspective: 1000px;
+  }
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+
+.flip-card-front {
+    background-color: white;
+  }
+
+.flip-card-front img {
+    margin-top: 50px;
+}
+
+.flip-card-back {
+    background-color: rgb(155, 0, 77);
+    color: white;
+    transform: rotateY(180deg);
+    text-align: justify;
+    padding: 10px;
+  }
+
+.flip-card-back h2 {
+      text-align: center;
+  }
+
+.circle {
+  width: 75px;
+  height: 75px;
+  background: rgb(155, 0, 77);
+  position: fixed;
+  bottom: 8px;
+  right: 8px;
+  border-radius: 50%;
+  margin-left: 5px;
+  box-shadow: 2px 1px rgb(134, 134, 134);
+  text-align: center;
+  z-index: 2;
+}
+
+.circle-text {
+  color: rgb(250, 250, 250);
+  font-size: 50px;
+}
+
+.circle a:hover {
+    text-decoration: none;
+}
+
+.logo {
+    display: block; 
+    width: 30%;
+    height: 50%;
+    margin-left: auto;
+    margin-right: auto; 
+}
+/* ____________section start justyna___________ */
+.app_functions{
+    background: #f8b9d9;
+    padding: 15px;
+}
+.text_section-app{
+    text-align: center;
+    font-size: 40px;
+    padding: 40px;
+}
+.text_section{
+    text-align: center;
+    font-size: 40px;
+  }
+.picture_icon {
+ height: 10%; 
+}
+  #text_app-functions{
+    text-align: justify;
+    font-size: 15px;
+    text-align: center;
+    padding: 30px;
+  }
+.check {
+  text-align: center;
+}
+  .advanteges__app_photo{
+    width: 100%;
+  }
+      /* calculator */
+  form {
+    margin-top: 10px;
+    display: none;
+  }
+  form input {
+    background: lightgrey;
+    border-radius: 20px;
+    margin: 5px;
+    padding: 5px;
+  }
+
+  @media only screen and (min-width: 1000px){
+      .col-sm-4 {
+        position: relative; 
+        max-width: 800px; /* Maximum width */
+        margin: 0 auto; /* Center it */  
+        padding: 10px;
+      } 
+      .col-sm-4 .text_advanteges-functions {
+        position: absolute; /* Position the background text */
+        background: rgb(0, 0, 0); /* Fallback color */
+        background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+        color: #f1f1f1;
+        width: 50%;
+        height: 25%;
+    
+       
+        bottom: 10px;
+        right: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    #text__advanteges_app{
+        text-align: center;
+        padding: 15px;
+        font-size: 25px;
+        display: block;
+        max-height: 25px;
+      }
+}
+  @media only screen and (min-width: 490px) and (max-width:1000px){
+    .col-sm-4 {
+      position: relative; 
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 10px;
+    } 
+    .col-sm-4 .text_advanteges-functions {
+      position: absolute;
+      background: rgb(0, 0, 0);
+      background: rgba(0, 0, 0, 0.5); 
+      color: #f1f1f1;
+      width: 90%;
+      height: 30%;
+      bottom: 10px;
+  }
+  #text__advanteges_app{
+      text-align: center;
+      padding: 15px;
+      font-size: 15px;
+      display: block;
+      max-height: 25px;
+    }
+  .team {
+     flex-wrap: wrap;
+  }
+}
+@media only screen and (min-width: 335px) and (max-width: 574px){
+    .col-sm-4 {
+      position: relative; 
+      max-width: 800px;
+      margin: 0 auto; 
+      padding: 10px;
+    } 
+    .col-sm-4 .text_advanteges-functions {
+      position: absolute; 
+      background: rgb(0, 0, 0); 
+      background: rgba(0, 0, 0, 0.5); 
+      color: #f1f1f1;
+      width: 95%;
+      height: 25%; 
+      bottom: 50px;
+    }
+   
+  #text__advanteges_app{
+      text-align: center;
+      padding: 25px;
+      font-size: 35px;
+
+    }
+    .team {
+        flex-direction: column;
+        align-items: center;
+  }
+}
+@media only screen and (max-width: 336px){
+    .col-sm-4 {
+      position: relative; 
+      max-width: 800px;
+      margin: 0 auto; 
+      padding: 10px;
+    } 
+    .col-sm-4 .text_advanteges-functions {
+      position: absolute; 
+      background: rgb(0, 0, 0); 
+      background: rgba(0, 0, 0, 0.5); 
+      color: #f1f1f1;
+      width: 94%;
+      height: 40%; 
+      bottom: 10px;
+    }
+   
+  #text__advanteges_app{
+      text-align: center;
+      padding: 25px;
+      font-size: 35px;
+
+    }
+}
+
+  /*____________ section end justyna___________ */
+
+  .footer {
+      background: rgb(0, 0, 0);
+      color: white;
+      width: 100%;
+      height:60px;
+  }
+
+  .col-sm6 img {
+      width: 35px;
+      height: 35px;
+      margin-left: 5px;
+      margin-right: 5px;
+      margin-top: 10px;
+  }
+
+  .row {
+      justify-content: center;
+  }
+
+    /* section start Marcin */
+
+    .signIn {
+        text-align: center;
+        background:#9b004d;
+        padding: 50px 0 50px 0;
+        margin: 50px 0 50px 0;   
+        color:#fff;
+    }
+
+    .signIn h3 {
+        font-size:40px;
+        margin:0;
+        padding:0px 0 30px 0;
+        font-weight: normal;
+    }
+
+    .signIn p {
+        font-size:22px;
+        margin-bottom:30px;
+    }
+
+    .signIn .form-text {
+        font-size:16px;
+        padding-top:10px;
+        color:#fff;
+        text-align:center;
+    }
+
+
+
+    .signIn form input {
+        text-align: center;
+    }
+
+    .btn-primary {
+        background:#000;
+        border-color:#000;
+    }
+
+    /* section end Marcin */
+
+
