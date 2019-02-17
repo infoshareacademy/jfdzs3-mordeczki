@@ -60,6 +60,7 @@
     background:#000;
     z-index:999;
     padding-top:60px;
+    padding-bottom:800px;
 }
 
 .container__game_rules h3 {
