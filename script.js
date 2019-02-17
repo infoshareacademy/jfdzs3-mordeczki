@@ -16,7 +16,7 @@ function sumValues() {
 
 let btnShowCalculator = document.querySelector('.check-paid');
 let btnHideCalculator = document.querySelector('.check-paid-hide');
-let hiddenCalculator = document.querySelector('form');
+let hiddenCalculator = document.querySelector('.calculator');
 
 btnShowCalculator.addEventListener('click', function() {
    hiddenCalculator.style.display = "block";
