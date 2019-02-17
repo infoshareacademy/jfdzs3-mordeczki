@@ -1,214 +1,112 @@
-    <!doctype html>
-    <html lang="pl-PL">
+<!doctype html>
+<html lang="pl-PL">
 
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Projekt Bjuti</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-            integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" media="screen" href="styles.css">
-        <link rel="shortcut icon" href="img/favicon.ico" />
-        <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz&subset=latin,latin-ext" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-            crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-            crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-            integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    </head>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Projekt Bjuti</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="styles.css">
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz&subset=latin,latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
 
-    <body>
-        <div class="container-fluid" id="menu-wide">
-            <div class="container">
-                <div class="menu">
-                    <nav class="navbar navbar-expand-lg justify-content-center">
-                        <div class="logobutton">
-                            <img class="logo" src="Logo.png">
+<body>
+    <div class="container-fluid" id="menu-wide">
+        <div class="container">
+            <div class="menu">
+                <nav class="navbar navbar-expand-lg justify-content-center">
+                    <div class="logobutton">
+                        <img class="logo" src="Logo.png">
+                    </div>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                        <div class="navbar-nav">
+                            <a class="nav-item nav-link active" href="#home">Strona Główna<span class="sr-only">(current)</span></a>
+                            <a class="nav-item nav-link" href="#about">Opis Aplikacji</a>
+                            <a class="nav-item nav-link" href="#team">Zespół</a>
+                            <a class="nav-item nav-link" href="#app">Plusy Aplikacji</a>
                         </div>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse"
-                            data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
-                            aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-                            <div class="navbar-nav">
-                                <a class="nav-item nav-link active" href="#home">Strona Główna<span
-                                        class="sr-only">(current)</span></a>
-                                <a class="nav-item nav-link" href="#about">Opis Aplikacji</a>
-                                <a class="nav-item nav-link" href="#team">Zespół</a>
-                                <a class="nav-item nav-link" href="#app">Plusy Aplikacji</a>
-                            </div>
-                        </div>
-                    </nav>
-                </div>
+                    </div>
+                </nav>
             </div>
         </div>
-        </div>
-        </nav>
-        </div>
-        <div class="container-full" id="home">
-            <section id="Filip">
-                <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img class="d-block w-100" src="img/baner_beauty_face.jpg" alt="First slide">
-                            <div class="carousel-caption d-none d-md-block float-left">
-                            </div>
+    </div>
+    </div>
+    </nav>
+    </div>
+    <div class="container-full" id="home">
+        <section id="Filip">
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="img/baner_beauty_face.jpg" alt="First slide">
+                        <div class="carousel-caption d-none d-md-block float-left">
                         </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="img/baner_beauty_body.jpg" alt="Second slide">
-                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="img/baner_beauty_body.jpg" alt="Second slide">
                     </div>
                 </div>
-        </div>
-        <div class="circle"><a href="javascript:scroll(0,0)">
-                <div class="circle-text">^</div>
-        </div></a>
-
-        <section class="app_functions">
-            <!-- section start justyna -->
-            <div id="about">
-                <p class="text_section-app">OPIS APLIKACJI</p>
             </div>
-            <div class="container">
-                <div class="row">
-                    <div>
-                        <div class="col-sm"><img class="picture_icon" src="img/calendar_icon.png" alt="calendar_icon"></div>
-                        <div class="col-sm">
-                            <p id="text_app-functions">WBUDOWANY KALENDARZ</p>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="col-sm"><img class="picture_icon" src="img/beauty_icon.jpg" alt="beauty_icon"></div>
-                        <div class="col-sm">
-                            <p id="text_app-functions">LISTA USŁUG BEAUTY</p>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="col-sm"><img class="picture_icon" src="img/search_icon.png" alt="search_icon"></div>
-                        <div class="col-sm">
-                            <p id="text_app-functions">WYSZUKIWARKA</p>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="col-sm"><img class="picture_icon" src="img/people_icon.png" alt="beauty_icon"></div>
-                        <div class="col-sm">
-                            <p id="text_app-functions">LISTA USŁUGODAWCÓW</p>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="col-sm"><img class="picture_icon" src="img/alarm_clock.png" alt="calendar_icon"> </div>
-                        <div class="col-sm">
-                            <p id="text_app-functions">PRZYPOMNIENIA</p>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="col-sm"><img class="picture_icon" src="img/credit_card_icon.png" alt="calendar_icon">
-                        </div>
-                        <div class="col-sm">
-                            <p id="text_app-functions">PŁATNOŚĆ PRZEZ APLIKACJĘ</p>
-                        </div>
+    </div>
+    <div class="circle"><a href="javascript:scroll(0,0)">
+            <div class="circle-text">^</div>
+    </div></a>
+
+    <section class="app_functions">
+        <!-- section start justyna -->
+        <div id="about">
+            <p class="text_section-app">OPIS APLIKACJI</p>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div>
+                    <div class="col-sm"><img class="picture_icon" src="img/calendar_icon.png" alt="calendar_icon"></div>
+                    <div class="col-sm">
+                        <p id="text_app-functions">WBUDOWANY KALENDARZ</p>
                     </div>
                 </div>
                 <div>
-
-                    <p id="text_app-functions">Aplikacja z wbudowany kalendarzem, zarządza Twoim wolnym czasem i pomaga w
-                        jego zaoszczędzeniu. Szuka wolnych terminów, a użytkownik ma za zadanie je zaakceptować i umówić się
-                        na daną wizytę lub je zignorować. Poprzez wgląd do Swojego kalendarza, jest możliwość podania
-                        informacji o swoich wolnych dniach i godzinach, jednocześnie zaznaczenia usługi, która nas
-                        interesuje. Aplikacja pomaga użytkownikowi zarządzać kalendarzem. Pokazuje w odpowiednim dla niego
-                        czasie wole terminy do specjalistów takich jak: fryzjerzy, manikiurzystki, masażyści, fizjoterapeuci
-                        itp. </p>
-                </div>
-                <div class="check">
-                    <button class="btn btn-primary check-paid">Oblicz ile zapłacisz za wizytę</button>
-                    <button class="btn btn-primary check-paid-hide">Zwiń</button>
-                    <div class="calculator">
-                        <input type="text" name="txt" placeholder="podaj nazwę usługi..."><input type="text" name="txtnum1"
-                            placeholder="kwota" style="width:75px"> zł
-                        <br>
-                        <input type="text" name="txt" placeholder="podaj nazwę usługi..."><input type="text" name="txtnum2"
-                            placeholder="kwota" style="width:75px"> zł
-                        <br>
-                        <input type="text" name="txtres"><br>
-                        <input type="button" value="oblicz" onClick="sumValues()">
-                    </div>
-        </section>
-        <!-- section end justyna -->
-
-        <section class="about-us" id="team"><a>ZESPÓŁ</a>
-            <div class="container">
-                <div class="team">
-                    <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <img src="img/Justyna.png" alt="Justyna" style="width:200px;height:200px;">
-                            </div>
-                            <div class="flip-card-back">
-                                <h2>Justyna Makowska</h2>
-                                <p>Reprezentantka młodego pokolenia design'erów. Absolwentka Filologii Polskiej w
-                                    Szczecinie. Twórca młodej marki z sygnowaną odzieżą damską i strojami do tańca w
-                                    standardzie. Posiada wieloletnie doświadczenie z projektowaniu odzieży. Jej nowa pasją
-                                    w, której stawia pierwsze kroki jest tworzenie i projektowanie stron i aplikacji
-                                    interetowych.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <img src="img/Marcin.png" alt="Marcin" style="width:200px;height:200px;">
-                            </div>
-                            <div class="flip-card-back">
-                                <h2>Marcin Osak</h2>
-                                <p>Odpowiedzialny za obsługę Klienta. To jego głos usłyszysz kiedy zadzwonisz do nas ze
-                                    swoim problemem. Dla niego nie ma zadań niemożliwych, chętnie przeprowadzi Cię przez
-                                    rejestrację. Nie zrobi tylko jednego - nie zapłaci za Ciebie abonamentu bo pracuje nad
-                                    tą aplikacją za darmo, aby nauczyć się kodować ;)
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <img src="img/Filip.png" alt="Filip" style="width:200px;height:200px;">
-                            </div>
-                            <div class="flip-card-back">
-                                <h2>Filip Adamczyk</h2>
-                                <p>Lorem ipsum dolor sit amet, oblique appellantur at est. Cu per quod detraxit
-                                    gubergren,clita virtute in mei. Eum eu viderer minimum fabellas, et mel quando quaeque
-                                    moderatius. Ut dignissim dissentias per, labitur dignissim evertitur eam et. Duo
-                                    intellegat voluptatum quaerendum ne, sit appareat assentior deterruisset ea.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <img src="img/Seba.png" alt="Seba" style="width:200px;height:200px;">
-                            </div>
-                            <div class="flip-card-back">
-                                <h2>Sebastian Staniak</h2>
-                                <p>Doskonale zorganizowany grafik komputerowy z wieloletnim doświadczeniem w realizowaniu
-                                    projektów. Tworzący kreacje wizualne, przygotowujący materiały do drukowania oraz
-                                    tworzący koncepcje wizualne dla materiałów promocyjnych. Biegle posługujący się
-                                    najnowszymi rozwiązaniami w zakresie grafiki użytkowej i komputerowej. Frontendowiec i
-                                    Grafik w jednym? Może być ciekawie :)
-                            </div>
-                        </div>
+                    <div class="col-sm"><img class="picture_icon" src="img/beauty_icon.jpg" alt="beauty_icon"></div>
+                    <div class="col-sm">
+                        <p id="text_app-functions">LISTA USŁUG BEAUTY</p>
                     </div>
                 </div>
-            </div>
-        </section>
+                <div>
+                    <div class="col-sm"><img class="picture_icon" src="img/search_icon.png" alt="search_icon"></div>
+                    <div class="col-sm">
+                        <p id="text_app-functions">WYSZUKIWARKA</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="col-sm"><img class="picture_icon" src="img/people_icon.png" alt="beauty_icon"></div>
+                    <div class="col-sm">
+                        <p id="text_app-functions">LISTA USŁUGODAWCÓW</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="col-sm"><img class="picture_icon" src="img/alarm_clock.png" alt="calendar_icon"> </div>
+                    <div class="col-sm">
+                        <p id="text_app-functions">PRZYPOMNIENIA</p>
+                    </div>
+                </div>
+                <div>
                     <div class="col-sm"><img class="picture_icon" src="img/credit_card_icon.png" alt="calendar_icon"> </div>
                     <div class="col-sm"><p id="text_app-functions">PŁATNOŚĆ PRZEZ APLIKACJĘ</p></div>
                 </div>      
@@ -228,7 +126,7 @@
     </section>
     <!-- section end justyna -->
 
-    <section class="about-us"> <a>ZESPÓŁ</a>
+    <section class="about-us" id="team"> <a>ZESPÓŁ</a>
         <div class="container">
             <div class="team">
                 <div class="flip-card">
@@ -282,63 +180,34 @@
         </div>
     </section>
 
-        <section class="row row-b" id="app">
-            <!-- section start justyna -->
-            <div class="w-100">
-                <p class="text_section">PLUSY APLIKACJI</p>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <picture class="col-sm-4">
-                        <img class="advanteges__app_photo" src="img/fitnes_.jpg" alt="fitnes_picture">
-                        <div class="text_advanteges-functions">
-                            <p id="text__advanteges_app">WIECEJ CZASU NA FITNESS</p>
-                        </div>
-                    </picture>
-                    <picture class="col-sm-4">
-                        <img class="advanteges__app_photo" src="img/shopping.png" alt="shopping_picture">
-                        <div class="text_advanteges-functions">
-                            <p id="text__advanteges_app">WIECEJ CZASU NA PRZYJAŹŃ</p>
-                        </div>
-                    </picture>
-                    <picture class="col-sm-4">
-                        <img class="advanteges__app_photo" src="img/mother.jpg" alt="mother_picture">
-                        <div class="text_advanteges-functions">
-                            <p id="text__advanteges_app">WIECEJ CZASU DLA RODZINY </p>
-                        </div>
-                    </picture>
-                </div>
-            </div>
-        </section><!-- section end justyna -->
-
-        <section class="signIn">
-            <div class="container">
-                <h3>ZAPISZ SIĘ NA WIELKĄ PREMIERĘ</h3>
-                <p>Chcesz być na bieżąco? Już dziś zapisz się na premierę i zagraj w naszą bezpłatną grę.</p>
-
-                <form action="mailto:biuro@bjuti.pl?subject=Zapis%20na%20premiere">
-                    <div class="form-group row">
-                        <div class="col-sm6">
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                                placeholder="Wpisz swój e-mail">
-                            <small id="emailHelp" class="form-text">Bez obaw, my też nie lubimy Spamu. Twoje dane będą z
-                                nami bezpieczne.</small>
-                        </div>
+    <section class="row row-b" id="app">
+        <!-- section start justyna -->
+        <div class="w-100">
+            <p class="text_section">PLUSY APLIKACJI</p>
+        </div>
+        <div class="container">
+            <div class="row">
+                <picture class="col-sm-4">
+                    <img class="advanteges__app_photo" src="img/fitnes_.jpg" alt="fitnes_picture">
+                    <div class="text_advanteges-functions">
+                        <p id="text__advanteges_app">WIECEJ CZASU NA FITNESS</p>
                     </div>
-                    <button type="submit" class="btn btn-primary">Gotowe, zapisz mnie!</button>
-                </form>
-
-                </form>
+                </picture>
+                <picture class="col-sm-4">
+                    <img class="advanteges__app_photo" src="img/shopping.png" alt="shopping_picture">
+                    <div class="text_advanteges-functions">
+                        <p id="text__advanteges_app">WIECEJ CZASU NA PRZYJAŹŃ</p>
+                    </div>
+                </picture>
+                <picture class="col-sm-4">
+                    <img class="advanteges__app_photo" src="img/mother.jpg" alt="mother_picture">
+                    <div class="text_advanteges-functions">
+                        <p id="text__advanteges_app">WIECEJ CZASU DLA RODZINY </p>
+                    </div>
+                </picture>
             </div>
-        </section>
-
-        <section class="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm6"><a href="http://www.facebook.com"><img src="img/fb.png"></a></div>
-                    <div class="col-sm6"><a href="http://www.slack.com"><img src="img/slack.png"></a></div>
-                    <div class="col-sm6"><a href="505536853"><img src="img/phone.png"></a></div>
-                </div>
+        </div>
+    </section><!-- section end justyna -->
 
     <section class="signIn">
         <div class="container">
@@ -367,29 +236,14 @@
                 <div class="col-sm6"><a href="http://www.facebook.com"><img src="img/fb.png"></a></div>
                 <div class="col-sm6"><a href="http://www.slack.com"><img src="img/slack.png"></a></div>
                 <div class="col-sm6"><a href="505536853"><img src="img/phone.png"></a></div>
-
             </div>
-        </section>
-
-
         </div>
-        <script src="http://cookiealert.sruu.pl/CookieAlert-latest.min.js"></script>
-        <script src="http://thecodeplayer.com/uploads/js/prefixfree-1.0.7.js" type="text/javascript"
-            type="text/javascript"></script>
-        <script src="script.js"></script>
-    </body>
+    </section>
 
     </div>
     <script src="http://cookiealert.sruu.pl/CookieAlert-latest.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
         <script src="http://thecodeplayer.com/uploads/js/prefixfree-1.0.7.js" type="text/javascript" type="text/javascript"></script>
     <script src="script.js"></script>
 </body>
 
-
-    </html>
+</html>

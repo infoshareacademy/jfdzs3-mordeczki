@@ -1,7 +1,6 @@
-// $(function(){
-//     $('.selectpicker').selectpicker();
-// });
-// nie działa^^^
+$(function(){
+    $('.selectpicker').selectpicker();
+});
 
 //cookies//
 CookieAlert.init();
@@ -19,16 +18,14 @@ let btnShowCalculator = document.querySelector('.check-paid');
 let btnHideCalculator = document.querySelector('.check-paid-hide');
 let hiddenCalculator = document.querySelector('.calculator');
 
-
-btnShowCalculator.addEventListener('click', function () {
-	hiddenCalculator.style.display = "block";
+btnShowCalculator.addEventListener('click', function() {
+   hiddenCalculator.style.display = "block";
 });
 
-btnHideCalculator.addEventListener('click', function () {
+btnHideCalculator.addEventListener('click', function() {
 	hiddenCalculator.style.display = "none";
 	hiddenCalculator.reset();
 });
-
 
 // scrollowanie
 
@@ -45,13 +42,3 @@ $(document).ready(function () {
 		}
 	});
 });
-=======
-btnShowCalculator.addEventListener('click', function() {
-   hiddenCalculator.style.display = "block";
-});
-
-btnHideCalculator.addEventListener('click', function() {
-	hiddenCalculator.style.display = "none";
-	hiddenCalculator.reset();
-});
-
