@@ -345,45 +345,40 @@ input[type="submit"] {
   }
 
     /* section start Marcin */
-
     .signIn {
-        text-align: center;
-        background:#9b004d;
-        padding: 50px 0 50px 0;
-        margin: 50px 0 50px 0;   
-        color:#fff;
-    }
+      text-align: center;
+      background:#9b004d;
+      padding: 50px 0 50px 0;
+      margin: 50px 0 50px 0;
+      color:#fff;
+  }
 
-    .signIn h3 {
-        font-size:40px;
-        margin:0;
-        padding:0px 0 30px 0;
-        font-weight: normal;
-    }
+  .signIn h3 {
+      font-size:40px;
+      margin:0;
+      padding:0px 0 30px 0;
+      font-weight: normal;
+  }
 
-    .signIn p {
-        font-size:22px;
-        margin-bottom:30px;
-    }
+  .signIn p {
+      font-size:22px;
+      margin-bottom:30px;
+  }
 
-    .signIn .form-text {
-        font-size:16px;
-        padding-top:10px;
-        color:#fff;
-        text-align:center;
-    }
+  .signIn .form-text {
+      font-size:16px;
+      padding-top:10px;
+      color:#fff;
+      text-align:center;
+  }
+  .signIn form input {
+      text-align: center;
+  }
 
-
-
-    .signIn form input {
-        text-align: center;
-    }
-
-    .btn-primary {
-        background:#000;
-        border-color:#000;
-    }
-
+  .btn-primary {
+      background:#000;
+      border-color:#000;
+  }
     /* section end Marcin */
 
 
