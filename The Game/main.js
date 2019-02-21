@@ -60,7 +60,7 @@ class GameEngine {
         }
     }
     checkNextLevel(){
-        let isNextLevelNeeded = true;
+        let isNextLevelNeeded = true;                     
         for( let i = 0; i < this.enemies.length; i++){
             if(this.enemies[i]){
                 isNextLevelNeeded = false;
@@ -69,11 +69,12 @@ class GameEngine {
         }
         return isNextLevelNeeded;
     }   
-    nextLevel(){
-        this.level += 1;
+    nextLevel(speed){
+        this.level += 1;                  
         this.boardLevel.innerHTML = "level: " + this.level;
         previousDirection = "Right"
         this.createNewEnemies(30);
+        this.enemies.speed =+ 50; // speed
     
     }
     createNewEnemies(quantity){
@@ -94,17 +95,13 @@ class GameEngine {
             }
         }
     }
-
     endGameBoard() {
         for (let i = 0; i < this.enemies.length; i++) {
             if (!this.enemies[i]) {
                 document.querySelector("container__game_rules").style.display = action;
-
             }
-
         }
     }
-
     findFirstEnemyOnLeft() { 
         let minimumPositionX = 450; 
         let enemyIndex = 0;
@@ -139,7 +136,6 @@ class GameEngine {
             }
         }
     }
-
     moveEnemies() {
         let dir = previousDirection;
         if (previousDirection == "Right" && this.findFirstEnemyOnRight().positionX == 450) {
@@ -178,7 +174,7 @@ class GameEngine {
                     if (this.enemies[j].health == 0) {
                         this.enemies[j].delete();
                         delete this.enemies[j];
-                        this.score += 100;
+                        this.score += 10;
                         // game1.boardScore.text = game1.score;
                         this.boardScore.innerHTML = "score: " + this.score;
                         console.log(game1.score)
@@ -235,8 +231,8 @@ class Player {
     }
 }
 class Enemy {
-    constructor(positionX, positionY,) { // param - speed
-        this.speed = 5 ; // speed;
+    constructor(positionX, positionY, speed) { // param - speed
+        this.speed = speed ; // speed;
         this.health = 2;
         this.positionX = positionX;
         this.positionY = positionY;
