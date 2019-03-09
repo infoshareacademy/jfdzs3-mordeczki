@@ -1,0 +1,10 @@
+.content_block {
+    display:block;
+    width:100%;
+    padding: 10px;
+    line-height:50px;
+    font-size:20px;
+    height: 1000px;
+    background: #9c6d6d;
+    text-align:left;
+}

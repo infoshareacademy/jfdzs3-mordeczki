@@ -1,0 +1,56 @@
+div.kont {
+    width: 1150px;
+    margin:0 auto 0 auto;
+    overflow: hidden;
+}
+nav, header, figure, section, footer {
+    width:100%;
+    background: #000;
+    color: #fff;
+    vertical-align: middle;
+    padding-left:2%;
+    padding-top:3%;
+    margin-top:25px;
+    min-height: 50px;
+}
+
+nav {margin-top:0; color:#000; background: yellow;}
+header {height:100px; color:yellow; text-align:center; font-size:40px; }
+figure {
+    margin:0;
+    margin-top: 25px;
+    display:block;
+    height:100px; 
+    float:left;
+     width:40%;}
+section {
+    float:right; 
+    width:50%;
+    background:#bbb;
+    color:#000;
+    margin-bottom:25px;
+}
+h1 {
+    margin:0; 
+    padding:0;}
+footer {
+    clear:both; background: gray;
+}
+
+@media only screen and (max-width: 1200px) {
+    div.kont {
+        width:100%;
+    }
+}
+
+@media only screen and (max-width: 700px) {  
+    figure {float:none; width:100%;}
+    section{float:none; width:100%;}
+} 
+
+@media only screen and (max-width: 600px) {  
+    header {display:none;}
+} 
+
+
+

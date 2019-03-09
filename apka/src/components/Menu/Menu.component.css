@@ -1,0 +1,27 @@
+.navigation {
+    background: yellow;
+    width: 100%;
+    height: 50px;
+    position:absolute;
+    top:0px;
+ text-align:center;
+    
+}
+
+.navigation a, .navigationFixed a {
+    display:inline;
+    float:right;
+    width:20%;
+    text-decoration:none;
+    color: blue;  
+    background:pink;
+}
+
+.navigationFixed {
+    background: green;
+    width: 100%;
+    height: 50px;
+    top:0px;
+ text-align:center;
+    position:fixed;
+}
